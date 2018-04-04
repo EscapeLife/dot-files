@@ -1,0 +1,11 @@
+Host centos6
+    HostName        192.168.31.19
+    Port            22
+    User            escape
+    IdentityFile    ~/.ssh/id_rsa
+
+Host centos7
+    HostName        192.168.31.71
+    Port            22
+    User            escape
+    IdentityFile    ~/.ssh/id_rsa
