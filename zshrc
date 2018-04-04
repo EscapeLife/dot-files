@@ -157,3 +157,30 @@ alias tms="tmux new -s"
 alias tma="tmux a -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
+
+# set hexo 
+alias hc="hexo clean"
+alias hd="hexo g -d"
+alias hn="hexo new"
+alias hs="hexo server"
+
+# set git
+alias gc="git clone"
+alias gi="git init"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gps="git push"
+alias gpl="git pull"
+alias gl="git log" 
+alias glo="git log --graph --pretty=oneline --abbrev-commit"
+alias gb="git branch"
+alias gbd="git branch -d"
+alias gck="git checkout"
+alias gs="git status"
+alias gd="git diff"
+alias gco="git checkout"
+alias grH="git reset HEAD"
+alias grh="git rest --hard"  # HEAD or gitID
+alias gm="git merge"
+alias gt="git tag"
+
