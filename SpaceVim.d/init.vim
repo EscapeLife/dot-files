@@ -26,18 +26,13 @@ let g:spacevim_colorscheme = 'gruvbox'
 " SpaceVim Layers: {{{
 call SpaceVim#layers#load('ctrlp')
 call SpaceVim#layers#load('shell')
-call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('git')
-call SpaceVim#layers#load('VersionControl')
+call SpaceVim#layers#load('github')
 call SpaceVim#layers#load('tags')
+call SpaceVim#layers#load('VersionControl')
 call SpaceVim#layers#load('lang#go')
-call SpaceVim#layers#load('lang#php')
 call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('lang#vim')
-call SpaceVim#layers#load('colorscheme',
-      \ {
-      \ 'random-theme' : 0,
-      \ })
 call SpaceVim#layers#load('lang#typescript')
 call SpaceVim#layers#load('lang#markdown',
       \ {
