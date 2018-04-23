@@ -159,10 +159,12 @@ alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
 # set hexo 
+alias hi="hexo init"
+alias hn="hexo new"
 alias hc="hexo clean"
 alias hd="hexo g -d"
-alias hn="hexo new"
 alias hs="hexo server"
+alias hcs="hexo clean && hexo server"
 
 # set git
 alias gc="git clone"
@@ -183,4 +185,9 @@ alias grH="git reset HEAD"
 alias grh="git rest --hard"  # HEAD or gitID
 alias gm="git merge"
 alias gt="git tag"
+
+# set pip
+alias pl="pip list --format=columns"
+alias pi="pip install"
+alias pip="pip install --upgrade pip"
 
