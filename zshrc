@@ -189,5 +189,5 @@ alias gt="git tag"
 # set pip
 alias pl="pip list --format=columns"
 alias pi="pip install"
-alias pip="pip install --upgrade pip"
+alias pp="pip install --upgrade pip"
 
