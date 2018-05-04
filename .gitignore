@@ -1,2 +1,5 @@
 # ignore dir
+.SpaceVim
+/.SpaceVim/
 .SpaceVim/
+\.SpaceVim/
