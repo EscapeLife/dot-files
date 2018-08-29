@@ -6,3 +6,14 @@
 
 > This is a personal config setting files and install working without setting.
 
+## Install
+
+```bash
+./install.sh
+```
+
+## Uninstall
+
+```bash
+./uninstall.sh
+```
