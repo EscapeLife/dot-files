@@ -1,13 +1,12 @@
-# -------------------
-# zsh config setting
-# -------------------
+# ---------------------
+# 1. zsh config setting
+# ---------------------
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# This is setting to be change with your current path
-export ZSH=/Users/escape/.oh-my-zsh
+export ZSH=/Users/wenpan/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -100,9 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# ------------------------
-# software config setting 
-# ------------------------
+# --------------------------
+# 2. software config setting 
+# --------------------------
 
 # set pyenv
 export PATH="/Users/wenpan/.pyenv/bin:$PATH"
@@ -114,8 +113,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# set spacevim
+export PATH="$HOME/.pyenv/shims:$PATH"
+
 # set aliyun mirrors
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+# cd "$(brew --repo)"
+# git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
+# cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+# git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
+# brew update
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+# source ~/.zshrc
 
 # set autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -139,14 +147,13 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 # set globl shadowsocks
-# unset http_proxy https_proxy
-# export http_proxy=http://localhost:1087
-# export https_proxy=http://localhost:1087
+alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087'
+alias disproxy='unset http_proxy https_proxy'
 
 
-# ----------------------
-# easy doning something
-# ----------------------
+# ------------------------
+# 3. easy doning something
+# ------------------------
 
 # set vim
 alias vi="nvim"
@@ -190,5 +197,5 @@ alias gt="git tag"
 # set pip
 alias pl="pip list --format=columns"
 alias pi="pip install"
+alias pui="pip uninstall"
 alias pp="pip install --upgrade pip"
-
