@@ -1,0 +1,70 @@
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2017 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+[options]
+    # set spacevim theme and colorscheme
+    colorscheme = "gruvbox"
+    background = "dark"
+
+    # set true colors
+    enable_guicolors = true
+
+    # set statusline font/tab/mode
+    statusline_separator = "arrow"
+    statusline_inactive_separator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_display_mode = false
+
+    # set spacevim and vim compatibility
+    vimcompatible = false
+
+    # set relative line number
+    relativenumber = 0
+
+
+[[layers]]
+name = "autocomplete"
+auto-completion-return-key-behavior = "complete"
+auto-completion-tab-key-behavior = "smart"
+
+[[layers]]
+name = "default"
+
+[[layers]]
+name = "checkers"
+show_cursor_error = true
+lint_on_the_fly = false
+
+[[layers]]
+name = "git"
+
+[[layers]]
+name = "debug"
+
+[[layers]]
+name = "denite"
+
+[[layers]]
+name = "shell"
+default_shell = "terminal"
+default_position = "top"
+default_height = 30
+
+[[layers]]
+name = "tools"
+
+[[layers]]
+name = "tools#dash"
+
+[[layers]]
+name = "lang#sh"
+
+[[layers]]
+name = "lang#python"
+format-on-save = true
