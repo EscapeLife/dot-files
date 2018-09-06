@@ -1,30 +1,18 @@
-# ---------------------
-# 1. zsh config setting
-# ---------------------
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# ---------------------------------- 
+# 1.oh-my-zsh original configuration
+# ---------------------------------- 
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/wenpan/.oh-my-zsh
+export ZSH="/Users/Escape/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# robbyrussell, af-magic, miloshadzic, agnoster
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -52,19 +40,37 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  man
+  tmux
+  brew
+  iterm2
+  pip
+  nvm
   git
+  github
+  python
+  autoenv
+  pylint
   autojump
+  autopep8
+  # double ecs to sudo
+  sudo
+  # web search info
+  web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -89,62 +95,21 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-# --------------------------
-# 2. software config setting 
-# --------------------------
-
-# set pyenv
-export PATH="/Users/wenpan/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# ----------------------------
+# 2.beautiful oh-my-zsh config
+# ----------------------------
 
 # set nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# set spacevim
-export PATH="$HOME/.pyenv/shims:$PATH"
-
-# set aliyun mirrors
-# cd "$(brew --repo)"
-# git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git
-# cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-# git remote set-url origin https://mirrors.aliyun.com/homebrew/homebrew-core.git
-# brew update
-# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
-# source ~/.zshrc
+# set autoenv config
+source $(brew --prefix autoenv)/activate.sh
 
 # set autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# set powerline font
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
-
-function install_powerline_precmd() {
-    for s in "${precmd_functions[@]}"; do
-        if [ "$s" = "powerline_precmd" ]; then
-            return
-        fi
-    done
-    precmd_functions+=(powerline_precmd)
-}
-
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
 
 # set globl shadowsocks
 alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087'
@@ -152,21 +117,49 @@ alias disproxy='unset http_proxy https_proxy'
 
 
 # ------------------------
-# 3. easy doning something
+# 3. customer alias config
 # ------------------------
 
-# set vim
+# set vim command config
 alias vi="nvim"
 alias vim="nvim"
 
-# set tmux
+# set shell command config
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+alias lr="ls -lhR"
+
+
+# set brew command config
+alias b="brew"
+alias bi="brew install"
+alias bu="brew uninstall"
+alias bl="brew list"
+alias bp="brew update"
+alias bs="brew search"
+alias bif="brew info"
+
+# set pip command config
+alias p="pip"
+alias pi="pip install"
+alias pu="pip uninstall"
+alias pl="pip list --format=columns"
+alias pp="pip install --upgrade pip"
+
+# set tmux command config
+alias t="tmux"
 alias tml="tmux ls"
 alias tms="tmux new -s"
 alias tma="tmux a -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
-# set hexo 
+# set hexo command config
+alias h="hexo"
 alias hi="hexo init"
 alias hn="hexo new"
 alias hc="hexo clean"
@@ -174,28 +167,46 @@ alias hd="hexo g -d"
 alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
-# set git
-alias gc="git clone"
+# set git command config
+# commit
+alias g="git"
 alias gi="git init"
+alias gc="git clone"
+alias gt="git tag"
+alias gs="git status"
 alias ga="git add"
+alias gaa="git add -all"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
+alias gd="git diff"
+alias gdw="git diff --word-diff"
 alias gl="git log" 
 alias glo="git log --graph --pretty=oneline --abbrev-commit"
+# branch
 alias gb="git branch"
+alias gbr="git branch -r"
+alias gba="git branch -a"
 alias gbd="git branch -d"
-alias gck="git checkout"
-alias gs="git status"
-alias gd="git diff"
+# checkout
 alias gco="git checkout"
-alias grH="git reset HEAD"
-alias grh="git rest --hard"  # HEAD or gitID
+alias gcb="git checkout -b"
+# merge
 alias gm="git merge"
-alias gt="git tag"
+# restore
+alias grH="git reset HEAD"
+alias grh="git rest --hard"
+# stash
+alias gt="git stash"
+alias gtl="git stash list"
+alias gta="git stash apply"
+alias gtd="git stash drop"
+alias gtp="git stash pop"
 
-# set pip
-alias pl="pip list --format=columns"
-alias pi="pip install"
-alias pui="pip uninstall"
-alias pp="pip install --upgrade pip"
+# set search command config
+alias sb="bing"
+alias sg="google"
+alias sh="github"
+
+# set other useful config
+alias ip="curl ip.cn"
