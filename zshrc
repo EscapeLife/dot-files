@@ -54,19 +54,10 @@ ZSH_THEME="af-magic"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
-  man
-  tmux
-  brew
-  iterm2
-  pip
-  nvm
   git
-  github
-  python
-  autoenv
-  pylint
+  pip
+  # use j to jump
   autojump
-  autopep8
   # double ecs to sudo
   sudo
   # web search info
@@ -131,7 +122,8 @@ alias ....="cd ../../.."
 alias cd..="cd .."
 alias cd...="cd ../.."
 alias cd....="cd ../../.."
-alias lr="ls -lhR"
+alias lr="ls -tRFh"
+alias lt="ls -ltFh"
 
 
 # set brew command config
@@ -172,13 +164,13 @@ alias hcs="hexo clean && hexo server"
 alias g="git"
 alias gi="git init"
 alias gc="git clone"
-alias gt="git tag"
 alias gs="git status"
 alias ga="git add"
-alias gaa="git add -all"
+alias gaa="git add ."
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
+# diff
 alias gd="git diff"
 alias gdw="git diff --word-diff"
 alias gl="git log" 
@@ -188,12 +180,13 @@ alias gb="git branch"
 alias gbr="git branch -r"
 alias gba="git branch -a"
 alias gbd="git branch -d"
-# checkout
+alias gbD="git branch -D"
 alias gco="git checkout"
 alias gcb="git checkout -b"
 # merge
 alias gm="git merge"
-# restore
+alias gmof="git merge --no-ff"
+# reset
 alias grH="git reset HEAD"
 alias grh="git rest --hard"
 # stash
@@ -202,6 +195,9 @@ alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtd="git stash drop"
 alias gtp="git stash pop"
+# tag
+alias gt="git tag"
+
 
 # set search command config
 alias sb="bing"
@@ -209,4 +205,5 @@ alias sg="google"
 alias sh="github"
 
 # set other useful config
+alias his="history"
 alias ip="curl ip.cn"
