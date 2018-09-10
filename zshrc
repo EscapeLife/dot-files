@@ -106,6 +106,19 @@ source $(brew --prefix autoenv)/activate.sh
 alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087'
 alias disproxy='unset http_proxy https_proxy'
 
+# set system ipython path
+export PATH=$PATH:/Users/Escape/Library/Python/2.7/bin/
+
+# set pyenv config
+# pyenv basedir at /usr/local/Cellar/pyenv/1.2.7
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+# pyenv lock openssl lib path
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
 
 # ------------------------
 # 3. customer alias config
