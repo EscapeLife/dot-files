@@ -107,7 +107,8 @@ alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://local
 alias disproxy='unset http_proxy https_proxy'
 
 # set system ipython path
-export PATH=$PATH:/Users/Escape/Library/Python/2.7/bin/
+# export PATH=$PATH:/Users/Escape/Library/Python/2.7/bin/
+export PATH=/usr/local/opt/python/libexec/bin:/Users/Escape/Library/Python/3.7/bin:$PATH
 
 # set pyenv config
 # pyenv basedir at /usr/local/Cellar/pyenv/1.2.7
@@ -147,6 +148,7 @@ alias bl="brew list"
 alias bp="brew update"
 alias bs="brew search"
 alias bif="brew info"
+alias blk="brew link"
 
 # set pip command config
 alias p="pip"
