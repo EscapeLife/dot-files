@@ -107,14 +107,16 @@ alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://local
 alias disproxy='unset http_proxy https_proxy'
 
 # set system ipython path
-# export PATH=$PATH:/Users/Escape/Library/Python/2.7/bin/
-export PATH=/usr/local/opt/python/libexec/bin:/Users/Escape/Library/Python/3.7/bin:$PATH
+# export PATH=/Users/Escape/Library/Python/2.7/bin/:$PATH
+# export PATH=/usr/local/opt/python/libexec/bin:/Users/Escape/Library/Python/3.7/bin:$PATH
 
 # set pyenv config
 # pyenv basedir at /usr/local/Cellar/pyenv/1.2.7
+export PYENV_ROOT="$HOME/.pyenv"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
 # pyenv lock openssl lib path
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
@@ -147,12 +149,14 @@ alias bu="brew uninstall"
 alias bl="brew list"
 alias bp="brew update"
 alias bs="brew search"
+alias bri="brew reinstall"
 alias bif="brew info"
 alias blk="brew link"
 
 # set pip command config
 alias p="pip"
 alias pi="pip install"
+alias piu="pip install --user"
 alias pu="pip uninstall"
 alias pl="pip list --format=columns"
 alias pp="pip install --upgrade pip"
@@ -166,7 +170,6 @@ alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
 # set hexo command config
-alias h="hexo"
 alias hi="hexo init"
 alias hn="hexo new"
 alias hc="hexo clean"
@@ -220,5 +223,6 @@ alias sg="google"
 alias sh="github"
 
 # set other useful config
+alias h="tldr"
 alias his="history"
 alias ip="curl ip.cn"
