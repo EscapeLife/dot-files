@@ -6,80 +6,103 @@
 # License: GPLv3
 #=============================================================================
 
+#########################################
+# 1. all spacevim option option section #
+#########################################
+
 [options]
     # set spacevim theme and colorscheme
     colorscheme = "gruvbox"
     background = "dark"
     enable_guicolors = true
-
+    
     # set icon
     enable_os_fileformat_icon = 1
     enable_tabline_filetype_icon = 1
-
+    
     # set statusline font/tab/mode
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_statusline_display_mode = false
-
+    
     # set spacevim and vim compatibility
     vimcompatible = false
-
+    
     # set relative line number
-    #relativenumber = 0
+    # relativenumber = 0
     default_indent = 4
     realtime_leader_guide = 1
     enable_statusline_mode = true
 
+    # disable ycm language completion
+    # enable_ycm = true
+    
     # set script for spacevim
     bootstrap_before = "myspacevim#before"
 
 
-[[layers]]
-    name = "autocomplete"
-    auto-completion-return-key-behavior = "complete"
-    auto-completion-tab-key-behavior = "smart"
+##################################
+# 2. All SpaceVim plug-in config #
+##################################
 
+# find file and dir in neovim
 [[layers]]
-    name = "checkers"
-    show_cursor_error = true
-    lint_on_the_fly = false
+name = 'denite'
 
+# provide tmux support
 [[layers]]
-    name = "git"
+name = 'tmux'
 
+# provide git support
 [[layers]]
-    name = "debug"
+name = 'git'
 
+# provide git extend support 
 [[layers]]
-    name = "denite"
+name = 'github'
 
+# provide shell language support
 [[layers]]
-    name = "shell"
-    default_shell = "terminal"
-    default_position = "top"
-    default_height = 30
+name = 'lang#sh'
 
+# provide some useful tools
 [[layers]]
-    name = "tools"
+name = 'tools'
 
+# provide a framework for debug code
 [[layers]]
-    name = "tools#dash"
+name = 'debug'
 
+# provide a framework for code completion
 [[layers]]
-    name = "tmux"
+name = 'autocomplete'
+auto-completion-return-key-behavior = "complete"
+auto-completion-tab-key-behavior = "smart"
 
+# provide markdown protocol
 [[layers]]
-    name = 'lang#vim'
+name = 'lang#markdown'
+enableWcwidth = 1
+listItemIndent = 1
 
+# provide shell command support
 [[layers]]
-    name = "lang#sh"
+name = 'shell'
+default_position = 'top'
+default_height = 30
 
+# language server protocol 
 [[layers]]
-    name = "lang#python"
-    format-on-save = true
+name = 'lsp'
+filetypes = ["sh", "python", "javascript"]
 
-[[layers]]
-    name = 'lang#markdown'
-    enableWcwidth = 1
-    listItemIndent = 1
+
+##################################
+# 3. All customer plug-in config #
+##################################
+
+# provide dispaly color support
+[[custom_plugins]]
+name = 'lilydjwg/colorizer'
+merged = 0
