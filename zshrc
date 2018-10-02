@@ -54,6 +54,7 @@ ZSH_THEME="af-magic"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-completions
   git
   pip
   # use j to jump
@@ -102,22 +103,21 @@ source $(brew --prefix autoenv)/activate.sh
 # set autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# set docker-compose completions
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
 # set globl shadowsocks
-alias runproxy='export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087'
-alias disproxy='unset http_proxy https_proxy'
+alias runproxy="export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087"
+alias disproxy="unset http_proxy https_proxy"
 
-# set system ipython path
-# export PATH=/Users/Escape/Library/Python/2.7/bin/:$PATH
-# export PATH=/usr/local/opt/python/libexec/bin:/Users/Escape/Library/Python/3.7/bin:$PATH
+# set pyenv home path config
+export PYENV_ROOT="/Users/Escape/.pyenv"
+export PATH="/Users/Escape/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-# set pyenv config
-# pyenv basedir at /usr/local/Cellar/pyenv/1.2.7
-export PYENV_ROOT="$HOME/.pyenv"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# pyenv lock openssl lib path
+# set pyenv openssl lib path
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
@@ -226,3 +226,4 @@ alias sh="github"
 alias h="tldr"
 alias his="history"
 alias ip="curl ip.cn"
+alias zd="autoload -U compinit && compinit"
