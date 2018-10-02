@@ -178,7 +178,6 @@ alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
 # set git command config
-# commit
 alias g="git"
 alias gi="git init"
 alias gc="git clone"
@@ -188,12 +187,10 @@ alias gaa="git add ."
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
-# diff
 alias gd="git diff"
 alias gdw="git diff --word-diff"
 alias gl="git log" 
 alias glo="git log --graph --pretty=oneline --abbrev-commit"
-# branch
 alias gb="git branch"
 alias gbr="git branch -r"
 alias gba="git branch -a"
@@ -201,21 +198,16 @@ alias gbd="git branch -d"
 alias gbD="git branch -D"
 alias gco="git checkout"
 alias gcb="git checkout -b"
-# merge
 alias gm="git merge"
 alias gmof="git merge --no-ff"
-# reset
 alias grH="git reset HEAD"
 alias grh="git rest --hard"
-# stash
 alias gt="git stash"
 alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtd="git stash drop"
 alias gtp="git stash pop"
-# tag
 alias gt="git tag"
-
 
 # set search command config
 alias sb="bing"
