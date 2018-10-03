@@ -214,6 +214,8 @@ alias sb="bing"
 alias sg="google"
 alias sh="github"
 
+# set docker command config
+
 # set other useful config
 alias h="tldr"
 alias his="history"
