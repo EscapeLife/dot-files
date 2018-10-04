@@ -1,12 +1,20 @@
-# ---------------------------------- 
-# 1.oh-my-zsh original configuration
-# ---------------------------------- 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/Escape/.oh-my-zsh"
+export ZSH="/Users/escape/.oh-my-zsh"
 
-# robbyrussell, af-magic, miloshadzic, agnoster
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,19 +57,19 @@ ZSH_THEME="af-magic"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-completions
   git
   pip
-  # use j to jump
   autojump
-  # double ecs to sudo
   sudo
-  # web search info
   web-search
 )
 
@@ -87,33 +95,42 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
 
 # ----------------------------
 # 2.beautiful oh-my-zsh config
 # ----------------------------
 
-# set nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# set nvm config
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # set autoenv config
-source $(brew --prefix autoenv)/activate.sh
+# source $(brew --prefix autoenv)/activate.sh
 
-# set autojump
+# set autojump config
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # set docker-compose completions
+# autoload -Uz compinit && compinit -i
 fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
 
-# set globl shadowsocks
+# set globl shadowsocks config
 alias runproxy="export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087"
 alias disproxy="unset http_proxy https_proxy"
 
 # set pyenv home path config
-export PYENV_ROOT="/Users/Escape/.pyenv"
-export PATH="/Users/Escape/.pyenv/bin:$PATH"
+export PYENV_ROOT="/Users/escape/.pyenv"
+export PATH="/Users/escape/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -127,11 +144,11 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # 3. customer alias config
 # ------------------------
 
-# set vim command config
+# set vim alias
 alias vi="nvim"
 alias vim="nvim"
 
-# set shell command config
+# set shell alias
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -141,8 +158,7 @@ alias cd....="cd ../../.."
 alias lr="ls -tRFh"
 alias lt="ls -ltFh"
 
-
-# set brew command config
+# set brew alias
 alias b="brew"
 alias bi="brew install"
 alias bu="brew uninstall"
@@ -153,7 +169,7 @@ alias bri="brew reinstall"
 alias bif="brew info"
 alias blk="brew link"
 
-# set pip command config
+# set pip alias
 alias p="pip"
 alias pi="pip install"
 alias piu="pip install --user"
@@ -161,7 +177,7 @@ alias pu="pip uninstall"
 alias pl="pip list --format=columns"
 alias pp="pip install --upgrade pip"
 
-# set tmux command config
+# set tmux alias
 alias t="tmux"
 alias tml="tmux ls"
 alias tms="tmux new -s"
@@ -169,7 +185,7 @@ alias tma="tmux a -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
-# set hexo command config
+# set hexo alias
 alias hi="hexo init"
 alias hn="hexo new"
 alias hc="hexo clean"
@@ -177,7 +193,7 @@ alias hd="hexo g -d"
 alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
-# set git command config
+# set common git alias
 alias g="git"
 alias gi="git init"
 alias gc="git clone"
@@ -191,6 +207,10 @@ alias gd="git diff"
 alias gdw="git diff --word-diff"
 alias gl="git log" 
 alias glo="git log --graph --pretty=oneline --abbrev-commit"
+alias grH="git reset HEAD"
+alias grh="git rest --hard"
+
+# set branch git alias
 alias gb="git branch"
 alias gbr="git branch -r"
 alias gba="git branch -a"
@@ -200,24 +220,34 @@ alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gm="git merge"
 alias gmof="git merge --no-ff"
-alias grH="git reset HEAD"
-alias grh="git rest --hard"
+
+# set statsh git alias
 alias gt="git stash"
 alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtd="git stash drop"
 alias gtp="git stash pop"
-alias gt="git tag"
 
-# set search command config
+# set submodule git alias
+alias gsa="git submodule add"
+alias gsi="git submodule init"
+alias gsu="git submodule update"
+
+# set other some info git alias
+alias gt="git tag"
+alias grv="git remote -v"
+
+# set common docker alias
+alias d="docker"
+
+# set search alias
 alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set docker command config
-
-# set other useful config
+# set useful alias
 alias h="tldr"
 alias his="history"
 alias ip="curl ip.cn"
+alias git='LANG=en_US git'
 alias zd="autoload -U compinit && compinit"
