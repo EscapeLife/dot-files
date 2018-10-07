@@ -129,6 +129,7 @@ alias runproxy="export http_proxy=http://localhost:1087 https_proxy=http://local
 alias disproxy="unset http_proxy https_proxy"
 
 # set pyenv home path config
+# /usr/local/lib/python3.7/site-packages
 export PYENV_ROOT="/Users/escape/.pyenv"
 export PATH="/Users/escape/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
@@ -177,6 +178,23 @@ alias piu="pip install --user"
 alias pu="pip uninstall"
 alias pl="pip list --format=columns"
 alias pp="pip install --upgrade pip"
+
+# set pip3 alias
+alias p3="pip"
+alias p3i="pip install"
+alias p3iu="pip install --user"
+alias p3u="pip uninstall"
+alias p3l="pip list --format=columns"
+alias p3p="pip install --upgrade pip"
+
+# set pyenv alias
+alias py="pyenv"
+alias pyi="pyenv install"
+alias pyu="pyenv uninstall"
+alias pyl="pyenv local"
+alias pys="pyenv versions"
+alias pyv="pyenv virtualenv"
+alias pym="pyenv migrate"
 
 # set tmux alias
 alias t="tmux"
