@@ -180,12 +180,12 @@ alias pl="pip list --format=columns"
 alias pp="pip install --upgrade pip"
 
 # set pip3 alias
-alias p3="pip"
-alias p3i="pip install"
-alias p3iu="pip install --user"
-alias p3u="pip uninstall"
-alias p3l="pip list --format=columns"
-alias p3p="pip install --upgrade pip"
+alias p3="pip3"
+alias p3i="pip3 install"
+alias p3iu="pip3 install --user"
+alias p3u="pip3 uninstall"
+alias p3l="pip3 list --format=columns"
+alias p3p="pip3 install --upgrade pip"
 
 # set pyenv alias
 alias py="pyenv"
