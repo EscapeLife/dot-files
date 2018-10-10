@@ -1,0 +1,7 @@
+[PIP3], 命令别名, 完整命令, 解释说明
+1, p3, pip3, 显示命令参数列表
+2, p3i, pip3 install, 安装第三方库
+3, p3iu, pip3 install --user, 在当前用户下安装第三方库
+4, p3u, pip3 uninstall, 卸载第三方库
+5, p3l, pip3 list --format=columns, 列出已经安装的第三方库
+6, p3p, pip3 install --upgrade pip, 升级PIP3工具
