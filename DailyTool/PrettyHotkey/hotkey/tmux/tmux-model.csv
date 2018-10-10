@@ -1,0 +1,12 @@
+模板, 命令快捷键, 解释说明
+1, <prefix + r>, 重载TMUX配置文件
+2, <prefix + I>, 自动安装TMUX插件
+3, <prefix + U>, 自动更新TMUX插件
+4, <prefix + alt+u>, 自动卸载TMUX插件
+5, <prefix + Ctrl+s>, 保存会话状态
+6, <prefix + Ctrl+r>, 恢复会话状态
+7, <prefix + Ctrl+f>, 文件搜索
+8, <prefix + Ctrl+u>, URL搜索
+9, <prefix + Ctrl+d>, 数字搜索
+10, <prefix + Ctrl+i>, IP地址搜索
+11, <prefix + p>, 抽出屏幕中的URL链接信息
