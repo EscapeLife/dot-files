@@ -142,8 +142,24 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 
+# -----------------------
+# 3. customer server list
+# -----------------------
+
+# home server list
+alias uh1="ssh escape@192.168.31.101"
+alias uh2="ssh escape@192.168.31.102"
+alias ch1="ssh escape@191.168.31.201"
+alias ch2="ssh escape@191.168.31.202"
+
+# work server list
+alias uw1="ssh escape@192.168.50.151"
+alias uw2="ssh escape@192.168.50.152"
+alias cw1="ssh escape@192.168.50.161"
+alias cw2="ssh escape@192.168.50.161"
+
 # ------------------------
-# 3. customer alias config
+# 4. customer alias config
 # ------------------------
 
 # set vim alias
@@ -257,7 +273,6 @@ alias gt="git tag"
 alias grv="git remote -v"
 
 # set common docker alias
-alias d="docker"
 
 # set search alias
 alias sb="bing"
