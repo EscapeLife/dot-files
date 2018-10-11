@@ -1,4 +1,4 @@
-import argparse
+from argparse import ArgumentParser
 
 from prettytable import PrettyTable
 from prettytable import from_csv
@@ -6,10 +6,17 @@ from prettytable import from_csv
 
 PIP2 = './hotkey/pip/pip2.csv'
 PIP3 = './hotkey/pip/pip3.csv'
+TMUX_COMMAND = './hotkey/tmux/tmux-command.csv'
 TMUX_SYSTEM = './hotkey/tmux/tmux-system.csv'
 TMUX_PANE = './hotkey/tmux/tmux-pane.csv'
 TMUX_WINDOWS = './hotkey/tmux/tmux-windows.csv'
 TMUX_MODEL = './hotkey/tmux/tmux-model.csv'
+
+
+parser = ArgumentParser(description="# Pretty hotkey for Escape's usefully commands.")
+parser.add_argument('--pip', choices=['2', '3'], help='pip alias hotkey')
+parser.add_argument('--tmux', choices=['c', 's', 'p', 'w', 'm'], help='tmux config hotkey')
+args = parser.parse_args()
 
 
 class HotkeyTable:
@@ -24,12 +31,6 @@ class HotkeyTable:
         print(table)
 
 
-parser = argparse.ArgumentParser(description="# Pretty hotkey for Escape's usefully commands.")
-parser.add_argument('--pip', choices=['2', '3'], help='pip alias hotkey')
-parser.add_argument('--tmux', choices=['s', 'p', 'w', 'm'], help='tmux config hotkey')
-args = parser.parse_args()
-
-
 if __name__ == '__main__':
     if args.pip == '2':
         pip = HotkeyTable(PIP2)
@@ -37,10 +38,11 @@ if __name__ == '__main__':
     elif args.pip == '3':
         pip = HotkeyTable(PIP3)
         pip.print_table()
-    else:
-        print('Error')
 
-    if args.tmux == 's':
+    if args.tmux == 'c':
+        tmux = HotkeyTable(TMUX_COMMAND)
+        tmux.print_table()
+    elif args.tmux == 's':
         tmux = HotkeyTable(TMUX_SYSTEM)
         tmux.print_table()
     elif args.tmux == 'p':
@@ -52,5 +54,3 @@ if __name__ == '__main__':
     elif args.tmux == 'm':
         tmux = HotkeyTable(TMUX_MODEL)
         tmux.print_table()
-    else:
-        print('Error')

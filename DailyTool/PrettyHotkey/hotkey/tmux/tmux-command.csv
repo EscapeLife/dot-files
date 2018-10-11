@@ -1,0 +1,7 @@
+[命令], 命令别名, 完整命令, 解释说明
+1, t, tmux, 显示TMUX帮助信息
+2, tml, tmux ls, 列出现有的会话列表
+3, tms, tmux new -s, 创建一个新的会话列表
+4, tma, tmux a -t, 进入一个已有的会话列表
+5, tmk, tmux kill-session -t, 删除一个指定的会话列表
+6, tmka, tmux kill-server, 删除所有的会话列表
