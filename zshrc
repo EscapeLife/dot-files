@@ -158,6 +158,7 @@ alias uw2="ssh escape@192.168.50.152"
 alias cw1="ssh escape@192.168.50.161"
 alias cw2="ssh escape@192.168.50.161"
 
+
 # ------------------------
 # 4. customer alias config
 # ------------------------
@@ -165,6 +166,7 @@ alias cw2="ssh escape@192.168.50.161"
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
+alias git='LANG=en_US git'
 
 # set shell alias
 alias ..="cd .."
@@ -280,8 +282,7 @@ alias sg="google"
 alias sh="github"
 
 # set useful alias
-alias h="tldr"
+alias cmd="tldr"
 alias his="history"
 alias ip="curl ip.cn"
-alias git='LANG=en_US git'
 alias zd="autoload -U compinit && compinit"
