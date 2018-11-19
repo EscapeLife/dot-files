@@ -283,7 +283,7 @@ alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set useful alias
+# set useful tools alias
 alias mac="m"
 alias cmd="tldr"
 alias his="history"
