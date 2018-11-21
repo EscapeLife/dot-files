@@ -277,6 +277,7 @@ alias gt="git tag"
 alias grv="git remote -v"
 
 # set common docker alias
+alias dps="docker ps -a"
 
 # set search alias
 alias sb="bing"
