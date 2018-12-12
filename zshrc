@@ -258,7 +258,7 @@ alias gbD="git branch -D"
 alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gm="git merge"
-alias gmof="git merge --no-ff"
+alias gmnf="git merge --no-ff"
 
 # set statsh git alias
 alias gt="git stash"
@@ -271,20 +271,18 @@ alias gtp="git stash pop"
 alias gsa="git submodule add"
 alias gsi="git submodule init"
 alias gsu="git submodule update"
+alias gsp="git submodule update --remote --merge"
 
 # set other some info git alias
 alias gt="git tag"
 alias grv="git remote -v"
-
-# set common docker alias
-alias dps="docker ps -a"
 
 # set search alias
 alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set useful tools alias
+# set useful alias
 alias mac="m"
 alias cmd="tldr"
 alias his="history"
