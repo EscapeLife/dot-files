@@ -8,18 +8,29 @@ wtf:
 
   grid:
     columns: [36, 36, 36, 36, 36]
-    rows: [9, 12, 12, 14, 4]
+    rows: [4, 8, 10, 12, 14, 3]
   openFileUtil: open
   refreshInterval: 10
   term: "xterm-256color"
 
   mods:
+    # [0.1 欢迎信息]
+    textfile:
+      enabled: true
+      filePath: "/Users/escape/.config/wtf/awesome.info"
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 5
+      refreshInterval: 10000
+
     # [1.1 天气预报]
     prettyweather:
       enabled: true
       city: "XiAn China"
       position:
-        top: 0
+        top: 1
         left: 0
         height: 1
         width: 1
@@ -42,7 +53,7 @@ wtf:
         New York: "America/New York"
         Toronto: "America/Toronto"
       position:
-        top: 0
+        top: 1
         left: 1
         height: 1
         width: 1
@@ -53,7 +64,7 @@ wtf:
     system:
       enabled: true
       position:
-        top: 0
+        top: 1
         left: 2
         height: 1
         width: 1
@@ -63,7 +74,7 @@ wtf:
     power:
       enabled: true
       position:
-        top: 0
+        top: 1
         left: 3
         height: 1
         width: 1
@@ -73,7 +84,7 @@ wtf:
     security:
       enabled: true
       position:
-        top: 0
+        top: 1
         left: 4
         height: 1
         width: 1
@@ -90,7 +101,7 @@ wtf:
       enabled: true
       filename: "todo.yml"
       position:
-        top: 1
+        top: 2
         left: 0
         height: 1
         width: 2
@@ -101,7 +112,7 @@ wtf:
       enabled: true
       numberOfStories: 20
       position:
-        top: 1
+        top: 2
         left: 2
         height: 1
         width: 3
@@ -114,7 +125,7 @@ wtf:
       enabled: true
       numberOfMessages: 10
       position:
-        top: 2
+        top: 3
         left: 0
         height: 1
         width: 5
@@ -128,32 +139,20 @@ wtf:
       dateFormat: "%H:%M %d %b %y"
       enabled: true
       position:
-        top: 3
+        top: 4
         left: 0
         height: 1
         width: 5
       refreshInterval: 10
       repositories:
-      - "/User/escape/AppFront"
+      - "/Users/escape/Fitout"
 
     # [5.1 状态信息]
     status:
       enabled: true
       position:
-        top: 4
+        top: 5
         left: 0
         height: 1
-        width: 3
+        width: 5
       refreshInterval: 1
-
-    # [5.3 命令行]
-    cmdrunner:
-      args: ["-l", "/Users/escape"]
-      cmd: "ls"
-      enabled: true
-      position:
-        top: 4
-        left: 3
-        height: 1
-        width: 2
-      refreshInterval: 30
