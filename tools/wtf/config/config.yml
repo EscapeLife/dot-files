@@ -1,0 +1,159 @@
+wtf:
+  colors:
+    background: "black"
+    border:
+      focusable: "crimson"
+      focused: "red"
+      normal: "cyan"
+
+  grid:
+    columns: [36, 36, 36, 36, 36]
+    rows: [9, 12, 12, 14, 4]
+  openFileUtil: open
+  refreshInterval: 10
+  term: "xterm-256color"
+
+  mods:
+    # [1.1 天气预报]
+    prettyweather:
+      enabled: true
+      city: "XiAn China"
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 1800
+      unit: "c"
+      view: 0
+      language: "en"
+
+    # [1.2 世界时间]
+    clocks:
+      colors:
+        rows:
+          even: "chartreuse"
+          odd: "lightblue"
+      enabled: true
+      locations:
+        Beijing: "Asia/Shanghai"
+        Shanghai: "Asia/Shanghai"
+        Dubai: "Asia/Dubai"
+        New York: "America/New York"
+        Toronto: "America/Toronto"
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 30
+      sort: "alphabetical"
+
+    # [1.3 系统信息]
+    system:
+      enabled: true
+      position:
+        top: 0
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 3600
+
+    # [1.4 电池状况]
+    power:
+      enabled: true
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 180
+
+    # [1.5 网络状况]
+    security:
+      enabled: true
+      position:
+        top: 0
+        left: 4
+        height: 1
+        width: 1
+      refreshInterval: 3600
+
+    # [2.1 任务计划]
+    todo:
+      checkedIcon: "X"
+      colors:
+        checked: gray
+        highlight:
+          fore: "black"
+          back: "orange"
+      enabled: true
+      filename: "todo.yml"
+      position:
+        top: 1
+        left: 0
+        height: 1
+        width: 2
+      refreshInterval: 1800
+
+    # [2.2 新闻资讯]
+    hackernews:
+      enabled: true
+      numberOfStories: 20
+      position:
+        top: 1
+        left: 2
+        height: 1
+        width: 3
+      storyType: top
+      refreshInterval: 900
+
+    # [3.1 聊天室]
+    gitter:
+      apiToken: ""
+      enabled: true
+      numberOfMessages: 10
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 5
+      roomUri: SpaceVim/cn
+      refreshInterval: 10
+
+    # [4.1 项目监控]
+    git:
+      commitCount: 5
+      commitFormat: "[forestgreen]%h [orange]%cd [white]%s [tomato]%an[white]"
+      dateFormat: "%H:%M %d %b %y"
+      enabled: true
+      position:
+        top: 3
+        left: 0
+        height: 1
+        width: 5
+      refreshInterval: 10
+      repositories:
+      - "/User/escape/AppFront"
+
+    # [5.1 状态信息]
+    status:
+      enabled: true
+      position:
+        top: 4
+        left: 0
+        height: 1
+        width: 3
+      refreshInterval: 1
+
+    # [5.3 命令行]
+    cmdrunner:
+      args: ["-l", "/Users/escape"]
+      cmd: "ls"
+      enabled: true
+      position:
+        top: 4
+        left: 3
+        height: 1
+        width: 2
+      refreshInterval: 30
