@@ -282,14 +282,18 @@ alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set useful alias
+# set useful tools alias
 alias mac="m"
 alias cmd="tldr"
-alias his="history"
 alias get="you-get"
 alias ip="curl cip.cc"
-alias zd="autoload -U compinit && compinit"
-alias watch="watch -n 3 -c"
-alias mcache="sudo purge"
+alias weather="curl wttr.in"
+alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
 alias ucache="echo 3 > /proc/sys/vm/drop_caches"
+
+# set useful commands alias
+alias his="history"
+alias mcache="sudo purge"
+alias watch="watch -n 3 -c"
+alias zd="autoload -U compinit && compinit"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
