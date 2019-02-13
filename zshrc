@@ -259,6 +259,7 @@ alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gm="git merge"
 alias gmnf="git merge --no-ff"
+alias gcp="git cherry-pick -x"
 
 # set statsh git alias
 alias gt="git stash"
