@@ -277,6 +277,8 @@ alias gsp="git submodule update --remote --merge"
 # set other some info git alias
 alias gt="git tag"
 alias grv="git remote -v"
+alias gname="git config user.name 'Escape'"
+alias gemail="git config user.email '240901017@qq.com'"
 
 # set search alias
 alias sb="bing"
