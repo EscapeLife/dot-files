@@ -7,6 +7,8 @@
 
 > This is a personal config setting files and install working without setting.
 
+![Dotfiles](https://escapelife-1257414824.cos.ap-shanghai.myqcloud.com/dotfiles.png)
+
 ## Install
 
 ```bash
