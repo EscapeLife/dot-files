@@ -63,14 +63,14 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-completions
   git
   pip
-  autojump
   sudo
+  autojump
   web-search
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,6 +124,13 @@ source $ZSH/oh-my-zsh.sh
 # autoload -Uz compinit && compinit -i
 fpath=(~/.zsh/completion $fpath)
 
+# set terminal env
+export LANG="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_NAME="en_US.UTF-8"
+export LC_ADDRESS="en_US.UTF-8"
+
 # set globl shadowsocks config
 alias runproxy="export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087"
 alias disproxy="unset http_proxy https_proxy"
@@ -141,22 +148,12 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
+# set spacevim config
+export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 
 # -----------------------
 # 3. customer server list
 # -----------------------
-
-# home server list
-alias uh1="ssh escape@192.168.31.101"
-alias uh2="ssh escape@192.168.31.102"
-alias ch1="ssh escape@191.168.31.201"
-alias ch2="ssh escape@191.168.31.202"
-
-# work server list
-alias uw1="ssh escape@192.168.50.151"
-alias uw2="ssh escape@192.168.50.152"
-alias cw1="ssh escape@192.168.50.161"
-alias cw2="ssh escape@192.168.50.161"
 
 
 # ------------------------
@@ -175,6 +172,7 @@ alias ....="cd ../../.."
 alias cd..="cd .."
 alias cd...="cd ../.."
 alias cd....="cd ../../.."
+alias rm="rmtrash"
 alias lr="ls -tRFh"
 alias lt="ls -ltFh"
 
@@ -223,11 +221,11 @@ alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
 # set hexo alias
-alias hi="hexo init"
-alias hn="hexo new"
-alias hc="hexo clean"
-alias hd="hexo g -d"
-alias hs="hexo server"
+# alias hi="hexo init"
+# alias hn="hexo new"
+# alias hc="hexo clean"
+# alias hd="hexo g -d"
+# alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
 # set common git alias
@@ -246,8 +244,14 @@ alias gl="git log"
 alias gla="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gls="git log --pretty=format:'%s %C(bold blue)(%an)%Creset' --abbrev-commit"
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glp="git log -p"
+alias glt="git blame"
+
+# set reset commit
+alias grc="git checkout --"
 alias grH="git reset HEAD"
-alias grh="git rest --hard"
+alias grh="git reset --hard"
+alias grm="git revert"
 
 # set branch git alias
 alias gb="git branch"
@@ -262,7 +266,7 @@ alias gmnf="git merge --no-ff"
 alias gcp="git cherry-pick -x"
 
 # set statsh git alias
-alias gt="git stash"
+alias gts="git stash"
 alias gtl="git stash list"
 alias gta="git stash apply"
 alias gtd="git stash drop"
@@ -274,11 +278,19 @@ alias gsi="git submodule init"
 alias gsu="git submodule update"
 alias gsp="git submodule update --remote --merge"
 
-# set other some info git alias
+# set some info git alias
 alias gt="git tag"
 alias grv="git remote -v"
-alias gname="git config user.name 'Escape'"
-alias gemail="git config user.email '240901017@qq.com'"
+
+# set db cli and http tools
+alias my="mycli"
+alias pg="pgcli"
+alias http="http"
+
+# set system info
+alias htop="htop"
+alias gtop="gtop"
+alias glances="glances"
 
 # set search alias
 alias sb="bing"
@@ -291,12 +303,12 @@ alias cmd="tldr"
 alias get="you-get"
 alias ip="curl cip.cc"
 alias weather="curl wttr.in"
-alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
-alias ucache="echo 3 > /proc/sys/vm/drop_caches"
+alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 
 # set useful commands alias
 alias his="history"
 alias mcache="sudo purge"
 alias watch="watch -n 3 -c"
 alias zd="autoload -U compinit && compinit"
+alias installapp="sudo spctl --master-disable"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
