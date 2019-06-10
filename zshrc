@@ -163,7 +163,9 @@ export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
-alias git='LANG=en_US git'
+alias git="LANG=en_US git"
+alias config="vim ~/.zshrc"
+alias reload="source ~/.zshrc"
 
 # set shell alias
 alias ..="cd .."
