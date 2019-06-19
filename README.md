@@ -5,7 +5,7 @@
 </p>
 
 <p align=center>
-  <b>DotFiles💻Mac系统下常用软件配置</b>
+  <b>DotFiles 💻 Mac系统下常用软件配置</b>
 </p>
 
 <p align="center">
