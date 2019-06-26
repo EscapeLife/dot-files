@@ -279,6 +279,7 @@ alias gsa="git submodule add"
 alias gsi="git submodule init"
 alias gsu="git submodule update"
 alias gsp="git submodule update --remote --merge"
+alias gsload="git submodule update --init --recursive; git submodule update --recursive"
 
 # set some info git alias
 alias gt="git tag"
