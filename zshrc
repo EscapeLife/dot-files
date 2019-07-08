@@ -132,8 +132,8 @@ export LC_NAME="en_US.UTF-8"
 export LC_ADDRESS="en_US.UTF-8"
 
 # set globl shadowsocks config
-alias runproxy="export http_proxy=http://localhost:1087 https_proxy=http://localhost:1087"
-alias disproxy="unset http_proxy https_proxy"
+alias runproxy="export http_proxy=http://127.0.0.1:8001; export HTTP_PROXY=http://127.0.0.1:8001; export https_proxy=http://127.0.0.1:8001; export HTTPS_PROXY=http://127.0.0.1:8001"
+alias disproxy="unset http_proxy HTTP_PROXY https_proxy HTTPS_PROXY"
 
 # set pyenv home path config
 # /usr/local/lib/python3.7/site-packages
