@@ -318,11 +318,12 @@ alias lzd="lazydocker"
 alias ip="curl cip.cc"
 alias weather="curl wttr.in"
 alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
+alias md2doc="pandoc"
 
 # set useful commands alias
 alias his="history"
 alias mcache="sudo purge"
 alias watch="watch -n 3 -c"
 alias zd="autoload -U compinit && compinit"
-alias installapp="sudo spctl --master-disable"
+alias installapp="sudo xattr -r -d com.apple.quarantine"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
