@@ -124,6 +124,10 @@ source $ZSH/oh-my-zsh.sh
 # autoload -Uz compinit && compinit -i
 fpath=(~/.zsh/completion $fpath)
 
+# set k8s autocompletion
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
+
 # set terminal env
 export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
@@ -162,6 +166,14 @@ source <(docker-app completion zsh) &> /dev/null
 # ------------------------
 # 4. customer alias config
 # ------------------------
+
+# set docker
+alias dps="docker ps -a"
+alias dst="docker stats"
+alias dka="docker ps -a -q | xargs docker rm -f"
+
+# set kubectl
+alias k="kubectl"
 
 # set vim alias
 alias vi="nvim"
