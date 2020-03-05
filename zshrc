@@ -155,8 +155,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # set spacevim config
 export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 
-# set docker app completion
-source <(docker-app completion zsh) &> /dev/null
 
 # -----------------------
 # 3. customer server list
