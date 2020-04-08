@@ -147,6 +147,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # set pipenv complete
+export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 eval "$(pipenv --completion)"
 
 # set pyenv openssl lib path
