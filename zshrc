@@ -146,6 +146,9 @@ export PATH="/Users/escape/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# set pipenv complete
+eval "$(pipenv --completion)"
+
 # set pyenv openssl lib path
 # CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
