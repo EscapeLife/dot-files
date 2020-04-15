@@ -342,3 +342,5 @@ alias watch="watch -n 3 -c"
 alias zd="autoload -U compinit && compinit"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
+alias updatecz="npm install -g commitizen cz-conventional-changelog"
+
