@@ -8,7 +8,8 @@ export ZSH="/Users/escape/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
+# ZSH_THEME="af-magic"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,6 +72,8 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-completions
+  history-substring-search
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -103,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 
 # ----------------------------
 # 2.beautiful oh-my-zsh config
@@ -159,52 +161,16 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # set spacevim config
 export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 
+# ---------------------
+# 3. open install tools
+# ---------------------
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+export PATH="$PATH:/Users/escape/.poetry/bin"
 
-# -----------------------
-# 3. customer server list
-# -----------------------
 
-
-# ------------------------
-# 4. customer alias config
-# ------------------------
-
-# set docker
-alias dps="docker ps -a"
-alias dst="docker stats"
-alias dka="docker ps -a -q | xargs docker rm -f"
-
-# set kubectl
-alias k="kubectl"
-
-# set vim alias
-alias vi="nvim"
-alias vim="nvim"
-alias git="LANG=en_US git"
-alias config="vim ~/.zshrc"
-alias reload="source ~/.zshrc"
-
-# set shell alias
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias cd..="cd .."
-alias cd...="cd ../.."
-alias cd....="cd ../../.."
-alias rm="rmtrash"
-alias lr="ls -tRFh"
-alias lt="ls -ltFh"
-
-# set brew alias
-alias b="brew"
-alias bi="brew install"
-alias bu="brew uninstall"
-alias bl="brew list"
-alias bp="brew update"
-alias bs="brew search"
-alias bri="brew reinstall"
-alias bif="brew info"
-alias blk="brew link"
+# ----------------------------
+# 4. customer git alias config
+# ----------------------------
 
 # set pip alias
 alias p="pip"
@@ -240,11 +206,11 @@ alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
 # set hexo alias
-# alias hi="hexo init"
-# alias hn="hexo new"
-# alias hc="hexo clean"
-# alias hd="hexo g -d"
-# alias hs="hexo server"
+alias hi="hexo init"
+alias hn="hexo new"
+alias hc="hexo clean"
+alias hd="hexo g -d"
+alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
 # set common git alias
@@ -265,7 +231,7 @@ alias gdH="git diff HEAD"
 alias gdw="git diff --word-diff"
 alias gdf="git diff --name-status"
 alias gds="git diff --cached --submodule"
-alias gl="git log" 
+alias gl="git log"
 alias gla="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias gls="git log --pretty=format:'%s %C(bold blue)(%an)%Creset' --abbrev-commit"
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -308,6 +274,58 @@ alias gsload="git submodule update --init --recursive; git submodule update --re
 # set some info git alias
 alias gt="git tag"
 alias grv="git remote -v"
+alias gname="git config user.name 'Escape'"
+alias gemail="git config user.email '240901017@qq.com'"
+alias gpushw="gaa; gcm 'One Fine Day'; gps"
+
+# -------------------------------
+# 6. customer docker alias config
+# -------------------------------
+
+# set docker
+alias dps="docker ps -a"
+alias dst="docker stats"
+alias dka="docker ps -a -q | xargs docker rm -f"
+
+# set kubectl
+alias k="kubectl"
+
+# -------------------------------
+# 7. customer escape alias config
+# -------------------------------
+
+# set vim alias
+alias vi="nvim"
+alias vim="nvim"
+alias git="LANG=en_US git"
+alias config="vim ~/.zshrc"
+alias reload="source ~/.zshrc"
+
+# set update tools
+alias updatebrew="brew update"
+alias updatenpm="npm install -g"
+
+# set shell alias
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
+alias rm="rmtrash"
+alias lr="ls -tRFh"
+alias lt="ls -ltFh"
+
+# set brew alias
+alias b="brew"
+alias bi="brew install"
+alias bu="brew uninstall"
+alias bl="brew list"
+alias bp="brew update"
+alias bs="brew search"
+alias bri="brew reinstall"
+alias bif="brew info"
+alias blk="brew link"
 
 # set db cli and http tools
 alias my="mycli"
@@ -330,10 +348,10 @@ alias cmd="tldr"
 alias get="you-get"
 alias lzd="lazydocker"
 alias ip="curl cip.cc"
-alias weather="curl wttr.in"
-alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 alias md2doc="pandoc"
-alias mysql="mycli"
+alias weather="curl wttr.in"
+alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 
 # set useful commands alias
 alias his="history"
@@ -342,5 +360,3 @@ alias watch="watch -n 3 -c"
 alias zd="autoload -U compinit && compinit"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
-alias updatecz="npm install -g commitizen cz-conventional-changelog"
-
