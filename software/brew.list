@@ -46,14 +46,10 @@ mysql
 rmtrash
 zsh
 neovim
-git-time-metric/gtm/gtm
-jesseduffield/lazydocker/lazydocker
 nginx
 shc
-v2ray/v2ray/v2ray-core
 nmap
 shellcheck
-ynqa/ktop/ktop
 git
 node
 git-lfs
