@@ -1,8 +1,0 @@
-[pyenv], 命令别名, 完整命令, 解释说明
-1, py, pyenv, 显示命令相关信息
-2, pyi, pyenv install, 安装Python版本
-3, pyu, pyenv uninstall, 卸载Python版本
-4, pyl, pyenv local, 设置Python版本
-5, pys, pyenv versions, 显示Python版本
-6, pyv, pyenv virtualenv, 创建虚拟Python版本
-7, pym, pyenv migrate, 迁移PIP第三方库

@@ -1,7 +1,0 @@
-[PIP], 命令别名, 完整命令, 解释说明
-1, p, pip, 显示命令参数列表
-2, pi, pip install, 安装第三方库
-3, piu, pip install --user, 在当前用户下安装第三方库
-4, pu, pip uninstall, 卸载第三方库
-5, pl, pip list --format=columns, 列出已经安装的第三方库
-6, pp, pip install --upgrade pip, 升级PIP工具
