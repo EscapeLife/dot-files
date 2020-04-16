@@ -701,7 +701,7 @@ yaa                 复制函数参数（包括逗号分隔）
 # 网络资源
 ##############################################################################
 
-最新版本            https://github.com/vim/vim   
+最新版本            https://github.com/vim/vim
 Windows 最新版      https://github.com/vim/vim-win32-installer/releases
 插件浏览            http://vimawesome.com
 reddit              https://www.reddit.com/r/vim/

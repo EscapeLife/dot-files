@@ -1,5 +1,4 @@
-Python 速查表中文版
-===
+# Python 速查表中文版
 
 - 本手册是 [Python cheat sheet](http://datasciencefree.com/python.pdf) 的中文翻译版。原作者：Arianne Colton and Sean Chen(data.scientist.info@gmail.com)
 - 编译：[ucasFL](https://github.com/ucasFL)
@@ -43,7 +42,7 @@ Python 速查表中文版
 模块亦称库，它只是一个简单地以 `.py` 为后缀的文件。
 
 - 列出模块内容：`dir(module1)`
-- 导入模块：`import module `
+- 导入模块：`import module`
 - 调用模块中的函数：`module1.func1()`
 
 **注：`import` 语句会创建一个新的名字空间，并且在该名字空间内执行 `.py` 文件中的所有语句。如果你想把模块内容导入到当前名字空间，请使用 `from module1 import *` 语句。**
@@ -96,7 +95,6 @@ Python 速查表中文版
 
    - `datetime` 组合了存储于 `date` 和 `time` 中的信息。
 
-
 ```python
 #从字符串中创建 datetime
 dt1 = datetime.strptime('20091031', '%Y%m%d')
@@ -124,7 +122,7 @@ diff = dt1 - dt2
 
 ```python
 #创建元组
-tup1 = 4, 5, 6 
+tup1 = 4, 5, 6
 # or
 tup1 = (6, 7, 8)
 #创建嵌套元组
@@ -154,7 +152,7 @@ list1 = [1, 'a', 3]
 #or
 list1 = list(tup1)
 #连接列表
-list1 + list2 
+list1 + list2
 #or
 list1.extend(list2)
 #追加到列表的末尾
@@ -292,7 +290,6 @@ def func1(posArg1, keywordArg1 = 1, ..)
 - 所有函数均位于模块内部作用域。见“模块”部分。
 - 在调用函数时，参数被打包成一个元组和一个字典，函数接收一个元组 `args` 和一个字典 `kwargs`，然后在函数内部解包。
 
-
 “函数是对象”的常见用法：
 
 ```python
@@ -362,7 +359,7 @@ zip(seq1, seq2) => [('seq1_1', 'seq2_1'), (..), ..]
 
 应用：多个序列同时迭代：
 
-```python 
+```python
 for i, (a, b) in enumerate(zip(seq1, seq2)):
 ```
 
@@ -374,8 +371,8 @@ seq1, seq2 = zip(zipOutput)
 
 - `reversed()` 将一个序列的元素以逆序迭代。
 
-```python 
-list(reversed(range(10))) 
+```python
+list(reversed(range(10)))
 ```
 
 **`reversed()` 会返回一个迭代器，`list()` 使之成为一个列表。**
@@ -397,7 +394,7 @@ var1 == var2
 
 - `for`循环的常见用法：
 
-```python 
+```python
 #可迭代对象（list、tuple）或迭代器
 for element in iterator:
 #如果元素是可以解包的序列
@@ -430,7 +427,7 @@ del(a); sys.getrefcount(5) => x + 1
 
 - 类的基本形式：
 
-```python 
+```python
 class MyObject(object):
   # 'self' 等价于 Java/C++ 中的 'this'
   def __init__(self, name):
@@ -476,7 +473,9 @@ month = '12';
 month.zfill(2) => '12'
 month.zfill(3) => '012'
 ```
+
 对列表和字典以及元组的深入理解
+
 ## 异常处理
 
 - 基本形式：
@@ -542,4 +541,3 @@ for val in collection:
 ```python
 [expr for val in collection for innerVal in val if condition]
 ```
-

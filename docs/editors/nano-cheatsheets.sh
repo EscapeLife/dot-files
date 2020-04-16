@@ -22,9 +22,9 @@ CTRL-g              显示帮助
 # 光标移动
 ##############################################################################
 
-CTRL-b              向左移动，同 <Left>   
-CTRL-f              向右移动，同 <Right> 
-CTRL-p              向上移动，同 <Up>   
+CTRL-b              向左移动，同 <Left>
+CTRL-f              向右移动，同 <Right>
+CTRL-p              向上移动，同 <Up>
 CTRL-n              向下移动，同 <Down>
 CTRL-a              移动到行首，同 <Home>
 CTRL-e              移动到行末，同 <End>

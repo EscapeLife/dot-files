@@ -39,7 +39,7 @@ ALT+f               # 向前（右边）移动一个单词
 ALT+t               # 交换字符
 ALT+BACKSPACE       # 删除光标前面一个单词，类似 CTRL+W，但不影响剪贴板
 
-CTRL+X CTRL+X       # 连续按两次 CTRL+X，光标在当前位置和行首来回跳转 
+CTRL+X CTRL+X       # 连续按两次 CTRL+X，光标在当前位置和行首来回跳转
 CTRL+X CTRL+E       # 用你指定的编辑器，编辑当前命令
 
 
@@ -330,12 +330,12 @@ function myfunc() {
     # $1 代表第一个参数，$N 代表第 N 个参数
     # $# 代表参数个数
     # $0 代表被调用者自身的名字
-    # $@ 代表所有参数，类型是个数组，想传递所有参数给其他命令用 cmd "$@" 
+    # $@ 代表所有参数，类型是个数组，想传递所有参数给其他命令用 cmd "$@"
     # $* 空格链接起来的所有参数，类型是字符串
     {shell commands ...}
 }
 
-myfunc                    # 调用函数 myfunc 
+myfunc                    # 调用函数 myfunc
 myfunc arg1 arg2 arg3     # 带参数的函数调用
 myfunc "$@"               # 将所有参数传递给函数
 shift                     # 参数左移
@@ -412,7 +412,7 @@ fi
 
 # 和上面完全等价，[ 是个和 test 一样的可执行程序，但最后一个参数必须为 ]
 # 这个名字为 "[" 的可执行程序一般就在 /bin 或 /usr/bin 下面，比 test 优雅些
-if [ -e /etc/passwd ]; then   
+if [ -e /etc/passwd ]; then
     echo "alright it exists ... "
 else
     echo "it doesn't exist ... "
@@ -455,7 +455,7 @@ https://www.ibm.com/developerworks/library/l-bash-test/index.html
 
 
 ##############################################################################
-# 流程控制：while / for / case / until 
+# 流程控制：while / for / case / until
 ##############################################################################
 
 # while 循环
@@ -479,7 +479,7 @@ for name [in list]; do
 done
 
 # for 列举某目录下面的所有文件
-for f in /home/*; do 
+for f in /home/*; do
     echo $f
 done
 
@@ -566,17 +566,17 @@ ps | tr -s " " | cut -d " " -f 2,3,4  # cut 搭配 tr 压缩字符
 
 
 ##############################################################################
-# 文本处理 - awk / sed 
+# 文本处理 - awk / sed
 ##############################################################################
 
 awk '{print $5}' file              # 打印文件中以空格分隔的第五列
 awk -F ',' '{print $5}' file       # 打印文件中以逗号分隔的第五列
 awk '/str/ {print $2}' file        # 打印文件中包含 str 的所有行的第二列
-awk -F ',' '{print $NF}' file      # 打印逗号分隔的文件中的每行最后一列 
+awk -F ',' '{print $NF}' file      # 打印逗号分隔的文件中的每行最后一列
 awk '{s+=$1} END {print s}' file   # 计算所有第一列的合
 awk 'NR%3==1' file                 # 从第一行开始，每隔三行打印一行
 
-sed 's/find/replace/' file         # 替换文件中首次出现的字符串并输出结果 
+sed 's/find/replace/' file         # 替换文件中首次出现的字符串并输出结果
 sed '10s/find/replace/' file       # 替换文件第 10 行内容
 sed '10,20s/find/replace/' file    # 替换文件中 10-20 行内容
 sed -r 's/regex/replace/g' file    # 替换文件中所有出现的字符串
@@ -625,8 +625,8 @@ bind '"\eh":"\C-b"'                # 绑定 ALT+h 为光标左移，同 CTRL+b /
 bind '"\el":"\C-f"'                # 绑定 ALT+l 为光标右移，同 CTRL+f / <Right>
 bind '"\ej":"\C-n"'                # 绑定 ALT+j 为下条历史，同 CTRL+n / <Down>
 bind '"\ek":"\C-p"'                # 绑定 ALT+k 为上条历史，同 CTRL+p / <Up>
-bind '"\eH":"\eb"'                 # 绑定 ALT+H 为光标左移一个单词，同 ALT-b 
-bind '"\eL":"\ef"'                 # 绑定 ALT+L 为光标右移一个单词，同 ALT-f 
+bind '"\eH":"\eb"'                 # 绑定 ALT+H 为光标左移一个单词，同 ALT-b
+bind '"\eL":"\ef"'                 # 绑定 ALT+L 为光标右移一个单词，同 ALT-f
 bind '"\eJ":"\C-a"'                # 绑定 ALT+J 为移动到行首，同 CTRL+a / <Home>
 bind '"\eK":"\C-e"'                # 绑定 ALT+K 为移动到行末，同 CTRL+e / <End>
 bind '"\e;":"ls -l\n"'             # 绑定 ALT+; 为执行 ls -l 命令
@@ -701,7 +701,7 @@ curl -L cheat.sh                   # 速查表大全
 # 列出最常使用的命令
 history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 
-# 列出所有网络状态：ESTABLISHED / TIME_WAIT / FIN_WAIT1 / FIN_WAIT2 
+# 列出所有网络状态：ESTABLISHED / TIME_WAIT / FIN_WAIT1 / FIN_WAIT2
 netstat -n | awk '/^tcp/ {++tt[$NF]} END {for (a in tt) print a, tt[a]}'
 
 # 通过 SSH 来 mount 文件系统
