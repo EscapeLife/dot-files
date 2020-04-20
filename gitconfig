@@ -1,11 +1,11 @@
 [user]
-	name = Escape
-	email = 240901017@qq.com
+    name = Escape
+    email = 240901017@qq.com
 [credential]
-	helper = store
+    helper = store
 [github]
-	name = Escape
-	email = 240901017@qq.com
+    name = Escape
+    email = 240901017@qq.com
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
