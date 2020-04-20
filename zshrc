@@ -148,12 +148,17 @@ export PATH="/Users/escape/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# set pipx userpath
-export PATH="$PATH:/Users/escape/.local/bin"
-
 # set pipenv complete
 export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 eval "$(pipenv --completion)"
+
+# set pipx userpath
+export PATH="$PATH:/Users/escape/.local/bin"
+
+# set pipx complete
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
 
 # set pyenv openssl lib path
 # CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
