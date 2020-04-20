@@ -5,6 +5,7 @@ flake8
 ipdb
 ipython
 isort
+iredis
 jedi
 jupyter
 mkdocs
