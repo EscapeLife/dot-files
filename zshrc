@@ -169,6 +169,10 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # set spacevim config
 export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 
+# set tmuxp config
+export DISABLE_AUTO_TITLE="true"
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
 # ---------------------
 # 3. open install tools
 # ---------------------
