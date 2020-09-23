@@ -256,6 +256,7 @@ alias grc="git checkout --"
 alias grH="git reset HEAD"
 alias grh="git reset --hard"
 alias grm="git revert"
+alias grs="git restore --staged"
 
 # set branch git alias
 alias gb="git branch"
