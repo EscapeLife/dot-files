@@ -354,23 +354,25 @@ alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set useful tools alias
-alias mac="m"
-alias cmd="tldr"
-alias get="you-get"
+# set useful command alias
 alias lzd="lazydocker"
-alias ip="curl myip.ipip.net"
-alias md2doc="pandoc"
-alias weather="curl wttr.in"
-alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
-alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
-alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
-
-# set useful commands alias
-alias his="history"
-alias mcache="sudo purge"
-alias watch="watch -n 3 -c"
 alias zd="autoload -U compinit && compinit"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
+
+# set useful tools alias
+alias mac="m"
+alias cmd="tldr"
+alias his="history"
+alias get="you-get"
+alias md2doc="pandoc"
+alias watch="watch -n 3 -c"
+alias weather="curl wttr.in"
+alias mcache="sudo purge"
+alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
+alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+alias ip="curl cip.cc"
+alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
+alias intip="echo '> Intern IP address'; dig bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
+alias pubip="echo '> Public IP address'; dig @8.8.8.8 bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
 
