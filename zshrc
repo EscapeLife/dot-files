@@ -226,7 +226,8 @@ alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
 # set common git alias
-alias g="git"
+alias g="LANG=en_US git"
+alias git="LANG=en_US git"
 alias gi="git init"
 alias gc="git clone"
 alias gcs="git clone --recursive"
@@ -310,7 +311,6 @@ alias k="kubectl"
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
-alias git="LANG=en_US git"
 alias config="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
 
