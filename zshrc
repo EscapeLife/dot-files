@@ -363,6 +363,7 @@ alias ip="curl myip.ipip.net"
 alias md2doc="pandoc"
 alias weather="curl wttr.in"
 alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
 alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 
 # set useful commands alias
