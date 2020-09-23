@@ -343,6 +343,7 @@ alias blk="brew link"
 # set db cli and http tools
 alias my="mycli"
 alias pg="pgcli"
+alias iredis="iredis"
 alias http="http"
 
 # set system info
