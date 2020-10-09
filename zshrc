@@ -256,6 +256,7 @@ alias glt="git blame"
 alias grc="git checkout --"
 alias grH="git reset HEAD"
 alias grh="git reset --hard"
+alias grp="git reset --hard HEAD^ && git push origin master -f"
 alias grm="git revert"
 alias grs="git restore --staged"
 
