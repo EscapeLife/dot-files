@@ -142,7 +142,7 @@ alias runproxy="export http_proxy=http://127.0.0.1:10887;export https_proxy=http
 alias disproxy="unset http_proxy https_proxy"
 
 # set pyenv home path config
-# /usr/local/lib/python3.7/site-packages
+# /usr/local/lib/python3.8/site-packages
 export PYENV_ROOT="/Users/escape/.pyenv"
 export PATH="/Users/escape/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
@@ -172,6 +172,10 @@ export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 # set tmuxp config
 export DISABLE_AUTO_TITLE="true"
 eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
+# set thefuck config
+eval $(thefuck --alias)
+
 
 # ---------------------
 # 3. open install tools
