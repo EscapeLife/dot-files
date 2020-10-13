@@ -176,6 +176,9 @@ eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 # set thefuck config
 eval $(thefuck --alias)
 
+# set gh config
+eval "$(gh completion -s zsh)"
+
 
 # ---------------------
 # 3. open install tools
