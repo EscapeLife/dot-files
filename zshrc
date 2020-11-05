@@ -179,13 +179,11 @@ eval $(thefuck --alias)
 # set gh config
 eval "$(gh completion -s zsh)"
 
-
 # ---------------------
 # 3. open install tools
 # ---------------------
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 export PATH="$PATH:/Users/escape/.poetry/bin"
-
 
 # ----------------------------
 # 4. customer git alias config
@@ -385,4 +383,3 @@ alias ip="curl cip.cc"
 alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
 alias intip="echo '> Intern IP address'; dig bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
 alias pubip="echo '> Public IP address'; dig @8.8.8.8 bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
-
