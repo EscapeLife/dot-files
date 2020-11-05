@@ -15,20 +15,20 @@
     colorscheme = "gruvbox"
     background = "dark"
     enable_guicolors = true
-    
+
     # set icon
     enable_os_fileformat_icon = 1
     enable_tabline_filetype_icon = 1
-    
+
     # set statusline font/tab/mode
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_statusline_display_mode = false
-    
+
     # set spacevim and vim compatibility
     vimcompatible = false
-    
+
     # set relative line number
     # relativenumber = 0
     default_indent = 4
@@ -37,7 +37,7 @@
 
     # disable ycm language completion
     # enable_ycm = true
-    
+
     # set script for spacevim
     bootstrap_before = "myspacevim#before"
 
@@ -58,7 +58,7 @@ name = 'tmux'
 [[layers]]
 name = 'git'
 
-# provide git extend support 
+# provide git extend support
 [[layers]]
 name = 'github'
 
@@ -92,7 +92,7 @@ name = 'shell'
 default_position = 'top'
 default_height = 30
 
-# language server protocol 
+# language server protocol
 [[layers]]
 name = 'lsp'
 filetypes = ["sh", "python", "javascript"]
