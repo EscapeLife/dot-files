@@ -230,7 +230,16 @@ alias hd="hexo g -d"
 alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
-# set common git alias
+# set yadm alias
+alias y="yadm"
+alias yi="yadm init"
+alias ys="yadm status"
+alias ya="yadm add"
+alias ycm="yadm commit -m"
+alias ypl="yadm pull"
+alias yps="yadm push"
+
+# set git alias
 alias g="LANG=en_US git"
 alias git="LANG=en_US git"
 alias gi="git init"
@@ -383,3 +392,4 @@ alias ip="curl cip.cc"
 alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
 alias intip="echo '> Intern IP address'; dig bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
 alias pubip="echo '> Public IP address'; dig @8.8.8.8 bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
+
