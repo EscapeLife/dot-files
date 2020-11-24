@@ -390,6 +390,3 @@ alias weather="curl wttr.in"
 alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
 alias ip="curl cip.cc"
 alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
-alias intip="echo '> Intern IP address'; dig bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
-alias pubip="echo '> Public IP address'; dig @8.8.8.8 bj.cheftin.cn | grep -A 2 'ANSWER SECTION' | tail -2"
-
