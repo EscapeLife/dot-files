@@ -17,7 +17,7 @@ wtf:
     # [1-1 欢迎信息]
     textfile:
       enabled: true
-      filePath: "/Users/escape/Fuckcode/github/DotFiles/tools/wtf/config/awesome.info"
+      filePath: "/Users/escape/.config/wtf/awesome.info"
       position:
         top: 0
         left: 0
