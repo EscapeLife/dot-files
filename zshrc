@@ -413,6 +413,10 @@ alias pg="pgcli"
 # 13. setting system alias
 # --------------------------------
 
+# --------------------------------
+# 14. setting system alias
+# --------------------------------
+
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
@@ -444,8 +448,16 @@ alias bif="brew info"
 alias blk="brew link"
 
 # set npm alias
-alias npm="npm"
-alias npmg="npm install -g"
+alias npmg="npm i -g"
+alias npml="npm list"
+alias npml0="npm ls --depth=0"
+alias npmi="npm init"
+alias npmr="npm run"
+alias npms="npm start"
+alias npmp="npm publish"
+alias npmS="npm i -S"
+alias npmD="npm i -D"
+alias npmv="npm -v"
 
 # set show info alias
 alias htop="htop"
@@ -458,7 +470,7 @@ alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 
 # --------------------------------
-# 14. setting escape alias
+# 15. setting escape alias
 # --------------------------------
 
 # set search alias
