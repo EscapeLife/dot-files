@@ -519,7 +519,8 @@ alias sh="github"
 # set network alias
 alias http="http"
 alias ip="curl cip.cc"
-alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
+alias speedn="disproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
+alias speedw="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
 
 # set tools alias
 alias mac="m"
