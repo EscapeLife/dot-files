@@ -413,6 +413,44 @@ alias pg="pgcli"
 # 13. setting system alias
 # --------------------------------
 
+# set vagrant run
+alias vg="vagrant"
+alias vgi="vagrant init"
+alias vgp="vagrant up"
+alias vgh="vagrant halt"
+alias vgd="vagrant destroy"
+alias vgdf="vagrant destroy -f"
+alias vgsu="vagrant suspend"
+alias vgr="vagrant reload"
+alias vgrp="vagrant reload --provision"
+
+# set vagrant ssh
+alias vgssh="vagrant ssh"
+alias vgsshc="vagrant ssh-config"
+alias vgrdp="vagrant rdp"
+
+# set vagrant status
+alias vgs="vagrant status"
+alias vgsg="vagrant global-status"
+alias vgre="vagrant resume"
+alias vgpr="vagrant provision"
+
+alias vgp="vagrant push"
+alias vgsh="vagrant share"
+
+# set vagrant box alias
+alias vgbl="vagrant box list"
+alias vgba="vagrant box add"
+alias vgbr="vagrant box remove"
+alias vgbu="vagrant box update"
+alias vgbo="vagrant box outdated"
+
+# set vagrant plugin alias
+alias vgpl="vagrant plugin list"
+alias vgpu="vagrant plugin update"
+alias vgpi="vagrant plugin install"
+alias vgpd="vagrant plugin uninstall"
+
 # --------------------------------
 # 14. setting system alias
 # --------------------------------
