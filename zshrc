@@ -64,7 +64,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  # git
   pip
   sudo
   autojump
@@ -107,20 +107,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ----------------------------
-# 2.beautiful oh-my-zsh config
-# ----------------------------
+# --------------------------------
+# 2. beautiful oh-my-zsh config
+# --------------------------------
+
+# set autojump config
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# set autoenv config
+# source $(brew --prefix autoenv)/activate.sh
 
 # set nvm config
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# set autoenv config
-# source $(brew --prefix autoenv)/activate.sh
-
-# set autojump config
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # set docker-compose completions
 # autoload -Uz compinit && compinit -i
@@ -152,7 +152,7 @@ eval "$(pyenv virtualenv-init -)"
 export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 eval "$(pipenv --completion)"
 
-# set pipx userpath
+# set pipx user path
 export PATH="$PATH:/Users/escape/.local/bin"
 
 # set pipx complete
@@ -173,21 +173,138 @@ export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 export DISABLE_AUTO_TITLE="true"
 eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
+# set node12 for hkex
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@12/lib"
+export CPPFLAGS="-I/usr/local/opt/node@12/include"
+
 # set thefuck config
 eval $(thefuck --alias)
 
 # set gh config
 eval "$(gh completion -s zsh)"
 
-# ---------------------
+# --------------------------------
 # 3. open install tools
-# ---------------------
+# --------------------------------
+
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 export PATH="$PATH:/Users/escape/.poetry/bin"
 
-# ----------------------------
-# 4. customer git alias config
-# ----------------------------
+# --------------------------------
+# 5. setting git alias
+# --------------------------------
+
+# set git alias
+alias g="git"
+alias git="LANG=en_US git"
+alias gpl="git pull"
+alias gps="git push"
+alias gfe="git fetch"
+alias gsh="git show"
+
+# set git add alias
+alias gi="git init"
+alias gc="git clone"
+alias gcs="git clone --recursive"
+alias gs="git status"
+alias gss="git status -s"
+alias ga="git add"
+alias gaa="git add --all"
+
+# set git repo alias
+alias grm="git rm"
+alias grmc="git rm --cached"
+
+# set git commit alias
+alias gam="git am"
+alias gcm="git commit -m"
+alias gcv="git commit -v"
+alias gcva="git commit -v -a"
+alias gcam="git commit -a -m"
+
+# set git diff alias
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gds="git diff --staged"
+alias gdt="git diff-tree --no-commit-id --name-only -r"
+alias gdH="git diff HEAD"
+alias gdw="git diff --word-diff"
+alias gdf="git diff --name-status"
+alias gds="git diff --cached --submodule"
+
+# set git branch alias
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gbr="git branch --remote"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+
+# set git reset alias
+alias grc="git checkout --"
+alias grH="git reset HEAD"
+alias grh="git reset --hard"
+alias grp="git reset --hard HEAD^ && git push origin master -f"
+alias grv="git revert"
+alias grs="git restore --staged"
+
+# set git merge alias
+alias gm="git merge"
+alias gmnf="git merge --no-ff"
+alias gre="git rebase"
+alias grei="git rebase -i"
+alias gcp="git cherry-pick -x"
+
+# set git log alias
+alias gl="git log"
+alias glp="git log -p"
+alias gls="git log --stat"
+alias glsp="git log --stat -p"
+alias glps="git log -p --submodule"
+alias gla="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
+alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# set git info alias
+alias gbl="git blame -b -w"
+alias gcount="git shortlog -sn"
+alias glf="git ls-files"
+alias glfs="git ls-files -s"
+alias gcf="git cat-file"
+alias gcft="git cat-file -t"
+alias gcfp="git cat-file -p"
+alias gcfs="git cat-file -s"
+
+# set git statsh alias
+alias gst="git stash"
+alias gsts="git stash save"
+alias gsta="git stash apply"
+alias gstp="git stash pop"
+alias gstd="git stash drop"
+alias gstl="git stash list"
+alias gstc="git stash clear"
+
+# set git submodule alias
+alias gsa="git submodule add"
+alias gsi="git submodule init"
+alias gsu="git submodule update"
+alias gsp="git submodule update --remote --merge"
+alias gsload="git submodule update --init --recursive; git submodule update --recursive"
+
+# set git tag alias
+alias gt="git tag"
+alias gts="git tag -s"
+alais gtv="git tag | sort -V"
+
+# set git escape alias
+alias gcmm="git cz"
+alias gcl="git config --list"
+alias gpushw="gaa; gcm 'One Fine Day'; gps"
+
+# --------------------------------
+# 6. setting pip alias
+# --------------------------------
 
 # set pip alias
 alias p="pip"
@@ -205,7 +322,10 @@ alias p3u="pip3 uninstall"
 alias p3l="pip3 list --format=columns"
 alias p3p="pip3 install --upgrade pip"
 
-# set pyenv alias
+# --------------------------------
+# 7. setting pyenv alias
+# --------------------------------
+
 alias py="pyenv"
 alias pyi="pyenv install"
 alias pyu="pyenv uninstall"
@@ -213,6 +333,12 @@ alias pyl="pyenv local"
 alias pys="pyenv versions"
 alias pyv="pyenv virtualenv"
 alias pym="pyenv migrate"
+alias pyup="pyenv update"
+alias pyinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
+
+# --------------------------------
+# 8. setting tmux alias
+# --------------------------------
 
 # set tmux alias
 alias t="tmux"
@@ -222,7 +348,14 @@ alias tma="tmux a -t"
 alias tmk="tmux kill-session -t"
 alias tmka="tmux kill-server"
 
-# set hexo alias
+# set tmuxp alias
+alias tpa="tmuxp load aws"
+alias tpt="tmuxp load test"
+
+# --------------------------------
+# 9. setting hexo alias
+# --------------------------------
+
 alias hi="hexo init"
 alias hn="hexo new"
 alias hc="hexo clean"
@@ -230,7 +363,10 @@ alias hd="hexo g -d"
 alias hs="hexo server"
 alias hcs="hexo clean && hexo server"
 
-# set yadm alias
+# --------------------------------
+# 10. setting yadm alias
+# --------------------------------
+
 alias y="yadm"
 alias yi="yadm init"
 alias ys="yadm status"
@@ -239,99 +375,47 @@ alias ycm="yadm commit -m"
 alias ypl="yadm pull"
 alias yps="yadm push"
 
-# set git alias
-alias g="LANG=en_US git"
-alias git="LANG=en_US git"
-alias gi="git init"
-alias gc="git clone"
-alias gcs="git clone --recursive"
-alias gs="git status"
-alias ga="git add"
-alias gaa="git add ."
-alias gcm="git commit -m"
-alias gcmm="git cz"
-alias gps="git push"
-alias gpl="git pull"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias gdH="git diff HEAD"
-alias gdw="git diff --word-diff"
-alias gdf="git diff --name-status"
-alias gds="git diff --cached --submodule"
-alias gl="git log"
-alias gla="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
-alias gls="git log --pretty=format:'%s %C(bold blue)(%an)%Creset' --abbrev-commit"
-alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glp="git log -p"
-alias glps="git log -p --submodule"
-alias glt="git blame"
+# --------------------------------
+# 11. setting docker alias
+# --------------------------------
 
-# set reset commit
-alias grc="git checkout --"
-alias grH="git reset HEAD"
-alias grh="git reset --hard"
-alias grp="git reset --hard HEAD^ && git push origin master -f"
-alias grm="git revert"
-alias grs="git restore --staged"
-
-# set branch git alias
-alias gb="git branch"
-alias gbr="git branch -r"
-alias gba="git branch -a"
-alias gbd="git branch -d"
-alias gbD="git branch -D"
-alias gco="git checkout"
-alias gcb="git checkout -b"
-alias gm="git merge"
-alias gmnf="git merge --no-ff"
-alias gcp="git cherry-pick -x"
-
-# set statsh git alias
-alias gts="git stash"
-alias gtl="git stash list"
-alias gta="git stash apply"
-alias gtd="git stash drop"
-alias gtp="git stash pop"
-
-# set submodule git alias
-alias gsa="git submodule add"
-alias gsi="git submodule init"
-alias gsu="git submodule update"
-alias gsp="git submodule update --remote --merge"
-alias gsload="git submodule update --init --recursive; git submodule update --recursive"
-
-# set some info git alias
-alias gt="git tag"
-alias grv="git remote -v"
-alias gname="git config user.name 'Escape'"
-alias gemail="git config user.email '240901017@qq.com'"
-alias gpushw="gaa; gcm 'One Fine Day'; gps"
-
-# -------------------------------
-# 6. customer docker alias config
-# -------------------------------
-
-# set docker
+# set docker alias
 alias dps="docker ps -a"
 alias dst="docker stats"
 alias dka="docker ps -a -q | xargs docker rm -f"
 
-# set kubectl
+# set kubectl alias
 alias k="kubectl"
 
-# -------------------------------
-# 7. customer escape alias config
-# -------------------------------
+# set tools alias
+alias lzd="lazydocker"
+alias zd="autoload -U compinit && compinit"
+
+# --------------------------------
+# 12. setting database alias
+# --------------------------------
+
+# set redis cli alias
+alias rd="iredis"
+
+# set mysql cli alias
+alias my="mycli"
+
+# set postgres cli alias
+alias pg="pgcli"
+
+# --------------------------------
+# 13. setting system alias
+# --------------------------------
 
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
+alias rm="rmtrash"
+alias his="history"
+alias watch="watch -n 3 -c"
 alias config="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
-
-# set update tools
-alias updatebrew="brew update"
-alias updatenpm="npm install -g"
 
 # set shell alias
 alias ..="cd .."
@@ -340,7 +424,6 @@ alias ....="cd ../../.."
 alias cd..="cd .."
 alias cd...="cd ../.."
 alias cd....="cd ../../.."
-alias rm="rmtrash"
 alias lr="ls -tRFh"
 alias lt="ls -ltFh"
 
@@ -355,38 +438,38 @@ alias bri="brew reinstall"
 alias bif="brew info"
 alias blk="brew link"
 
-# set db cli and http tools
-alias my="mycli"
-alias pg="pgcli"
-alias iredis="iredis"
-alias http="http"
+# set npm alias
+alias npm="npm"
+alias npmg="npm install -g"
 
-# set system info
+# set show info alias
 alias htop="htop"
 alias gtop="gtop"
 alias glances="glances"
+
+# set secre alias
+alias mcache="sudo purge"
+alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
+alias installapp="sudo xattr -r -d com.apple.quarantine"
+
+# --------------------------------
+# 14. setting escape alias
+# --------------------------------
 
 # set search alias
 alias sb="bing"
 alias sg="google"
 alias sh="github"
 
-# set useful command alias
-alias lzd="lazydocker"
-alias zd="autoload -U compinit && compinit"
-alias installapp="sudo xattr -r -d com.apple.quarantine"
-alias pyenvinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
-alias mcache="sudo purge"
-alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
-
-# set useful tools alias
-alias mac="m"
-alias cmd="tldr"
-alias his="history"
-alias get="you-get"
-alias md2doc="pandoc"
-alias watch="watch -n 3 -c"
-alias weather="curl wttr.in"
-alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+# set network alias
+alias http="http"
 alias ip="curl cip.cc"
 alias speed="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
+
+# set tools alias
+alias mac="m"
+alias cmd="tldr"
+alias get="you-get"
+alias md2doc="pandoc"
+alias weather="curl wttr.in"
+alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
