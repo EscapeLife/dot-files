@@ -78,7 +78,6 @@ plugins=(
   # docker
   # vagrant
   # docker-compose
-
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -134,6 +133,10 @@ fpath=(~/.zsh/completion $fpath)
 # set k8s autocompletion
 source <(kubectl completion zsh)
 complete -F __start_kubectl k
+
+# set vagrant completions
+fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
+compinit
 
 # set terminal env
 export LANG="en_US.UTF-8"
@@ -222,7 +225,6 @@ alias grm="git rm"
 alias grmc="git rm --cached"
 
 # set git commit alias
-alias gam="git am"
 alias gcm="git commit -m"
 alias gcv="git commit -v"
 alias gcva="git commit -v -a"
