@@ -453,6 +453,14 @@ alias vgpu="vagrant plugin update"
 alias vgpi="vagrant plugin install"
 alias vgpd="vagrant plugin uninstall"
 
+# set vagrant snapshot alias
+alias vgkl="vagrant snapshot list"
+alias vgks="vagrant snapshot save"
+alias vgkr="vagrant snapshot restore"
+alias vgkd="vagrant snapshot delete"
+alias vgki="vagrant snapshot push"
+alias vgko="vagrant snapshot pop"
+
 # --------------------------------
 # 14. setting system alias
 # --------------------------------
