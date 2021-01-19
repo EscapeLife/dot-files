@@ -539,3 +539,5 @@ alias get="you-get"
 alias md2doc="pandoc"
 alias weather="curl wttr.in"
 alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+alias virtualre="sudo '/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh' restart"
+
