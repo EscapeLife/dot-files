@@ -7,13 +7,14 @@ export ZSH="/Users/escape/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="af-magic"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -27,8 +28,14 @@ ZSH_THEME="spaceship"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -40,12 +47,14 @@ ZSH_THEME="spaceship"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="false"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -59,25 +68,30 @@ ZSH_THEME="spaceship"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   pip
   sudo
   autojump
+  jsontools
   web-search
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-completions
   history-substring-search
+  colored-man-pages
+  python
   poetry
   # git
   # npm
-  # docker
   # vagrant
+  # docker
   # docker-compose
+  # kubectl
+  # helm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,9 +112,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -128,11 +139,11 @@ source $ZSH/oh-my-zsh.sh
 
 # set docker-compose completions
 # autoload -Uz compinit && compinit -i
-fpath=(~/.zsh/completion $fpath)
+# fpath=(~/.zsh/completion $fpath)
 
 # set k8s autocompletion
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
+# source <(kubectl completion zsh)
+# complete -F __start_kubectl k
 
 # set vagrant completions
 fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
@@ -164,9 +175,9 @@ eval "$(pipenv --completion)"
 export PATH="$PATH:/Users/escape/.local/bin"
 
 # set pipx complete
-autoload -U bashcompinit
-bashcompinit
-eval "$(register-python-argcomplete pipx)"
+# autoload -U bashcompinit
+# bashcompinit
+# eval "$(register-python-argcomplete pipx)"
 
 # set pyenv openssl lib path
 # CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
@@ -209,12 +220,11 @@ alias git="LANG=en_US git"
 alias gpl="git pull"
 alias gps="git push"
 alias gfe="git fetch"
-alias gsh="git show"
 
 # set git add alias
 alias gi="git init"
-alias gc="git clone"
-alias gcs="git clone --recursive"
+alias gc="GIT_LFS_SKIP_SMUDGE=1 git clone"
+alias gcs="GIT_LFS_SKIP_SMUDGE=1 git clone --recursive"
 alias gs="git status"
 alias gss="git status -s"
 alias ga="git add"
@@ -225,6 +235,7 @@ alias grm="git rm"
 alias grmc="git rm --cached"
 
 # set git commit alias
+alias gam="git am"
 alias gcm="git commit -m"
 alias gcv="git commit -v"
 alias gcva="git commit -v -a"
@@ -234,11 +245,13 @@ alias gcam="git commit -a -m"
 alias gd="git diff"
 alias gdc="git diff --cached"
 alias gds="git diff --staged"
-alias gdt="git diff-tree --no-commit-id --name-only -r"
 alias gdH="git diff HEAD"
+alias gdt="git diff-tree --no-commit-id --name-only -r"
 alias gdw="git diff --word-diff"
 alias gdf="git diff --name-status"
 alias gds="git diff --cached --submodule"
+alias gbl="git blame -b -w"
+alias gcount="git shortlog -sn"
 
 # set git branch alias
 alias gb="git branch"
@@ -253,9 +266,10 @@ alias gcb="git checkout -b"
 alias grc="git checkout --"
 alias grH="git reset HEAD"
 alias grh="git reset --hard"
+alias grs="git reset --soft"
 alias grp="git reset --hard HEAD^ && git push origin master -f"
 alias grv="git revert"
-alias grs="git restore --staged"
+alias gres="git restore --staged"
 
 # set git merge alias
 alias gm="git merge"
@@ -277,9 +291,21 @@ alias glda="git log --diff-filter=D --summary"
 alias gla="git log --graph --decorate --pretty=oneline --abbrev-commit --all"
 alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# set git info alias
-alias gbl="git blame -b -w"
-alias gcount="git shortlog -sn"
+# set git lfs alias
+alias gfs="git lfs"
+alias gfsi="git lfs install"
+alias gfsl="git lfs ls-files"
+alias gfsa="git lfs track"
+alias gfsd="git lfs untrack"
+alias gfss="git lfs status"
+alias gfsf="git lfs fetch"
+alias gfspl="git lfs pull"
+alias gfsps="git lfs push"
+alias gfsc="git lfs clone"
+alias gfsu="git lfs update"
+alias gfse="git lfs env"
+
+# set git show alias
 alias glf="git ls-files"
 alias glfs="git ls-files -s"
 alias gcf="git cat-file"
@@ -305,8 +331,18 @@ alias gsload="git submodule update --init --recursive; git submodule update --re
 
 # set git tag alias
 alias gt="git tag"
+alias gta="git tag -a"
 alias gts="git tag -s"
-alais gtv="git tag | sort -V"
+alias gtd="git tag -d"
+alias gsh="git show"
+alias gtv="git tag | sort -V"
+alias gtp="git push origin"
+alias gtpa="git push origin --tags"
+
+# set git remote alias
+alias gru="git remote"
+alias gruv="git remote -v"
+alias grua="git remote add upstream"
 
 # set git escape alias
 alias gcmm="git cz"
@@ -403,7 +439,29 @@ alias lzd="lazydocker"
 alias zd="autoload -U compinit && compinit"
 
 # --------------------------------
-# 12. setting database alias
+# 12. set docker-compose alias
+# --------------------------------
+
+alias dco="docker-compose"
+alias dcb="docker-compose build"
+alias dce="docker-compose exec"
+alias dcps="docker-compose ps"
+alias dcrestart="docker-compose restart"
+alias dcrm="docker-compose rm"
+alias dcr="docker-compose run"
+alias dcstop="docker-compose stop"
+alias dcup="docker-compose up"
+alias dcupb="docker-compose up --build"
+alias dcupd="docker-compose up -d"
+alias dcdn="docker-compose down"
+alias dcl="docker-compose logs"
+alias dclf="docker-compose logs -f"
+alias dcpull="docker-compose pull"
+alias dcstart="docker-compose start"
+alias dck="docker-compose kill"
+
+# --------------------------------
+# 13. setting database alias
 # --------------------------------
 
 # set redis cli alias
@@ -416,17 +474,18 @@ alias my="mycli"
 alias pg="pgcli"
 
 # --------------------------------
-# 13. setting system alias
+# 14. setting vagrant alias
 # --------------------------------
 
 # set vagrant run
 alias vg="vagrant"
 alias vgi="vagrant init"
-alias vgp="vagrant up"
+alias vgu="vagrant up"
 alias vgh="vagrant halt"
 alias vgd="vagrant destroy"
 alias vgdf="vagrant destroy -f"
 alias vgsu="vagrant suspend"
+alias vgre="vagrant resume"
 alias vgr="vagrant reload"
 alias vgrp="vagrant reload --provision"
 
@@ -466,14 +525,16 @@ alias vgki="vagrant snapshot push"
 alias vgko="vagrant snapshot pop"
 
 # --------------------------------
-# 14. setting system alias
+# 15. setting system alias
 # --------------------------------
 
 # set vim alias
 alias vi="nvim"
 alias vim="nvim"
+alias h="history"
+alias hs="history | grep"
+alias hsi="history | grep -i"
 alias rm="rmtrash"
-alias his="history"
 alias watch="watch -n 3 -c"
 alias config="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
@@ -522,7 +583,7 @@ alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 
 # --------------------------------
-# 15. setting escape alias
+# 16. setting escape alias
 # --------------------------------
 
 # set search alias
