@@ -1,0 +1,49 @@
+runcharts:
+  - title: Search engine response time
+    rate-ms: 500
+    scale: 2
+    legend:
+      enabled: true
+      details: false
+    items:
+      - label: GOOGLE
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.google.com
+        color: 178
+      - label: YAHOO
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
+      - label: BING
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.bing.com
+
+sparklines:
+  - title: CPU usage
+    rate-ms: 200
+    scale: 0
+    sample: ps -A -o %cpu | awk '{s+=$1} END {print s}'
+  - title: Free memory pages
+    rate-ms: 200
+    scale: 0
+    sample: memory_pressure | grep 'Pages free' | awk '{print $3}'
+
+barcharts:
+  - title: Local network activity
+    rate-ms: 500
+    scale: 0
+    items:
+      - label: UDP bytes in
+        sample: nettop -J bytes_in -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: UDP bytes out
+        sample: nettop -J bytes_out -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes in
+        sample: nettop -J bytes_in -l 1 -m tcp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes out
+        sample: nettop -J bytes_out -l 1 -m tcp | awk '{sum += $4} END {print sum}'
+
+textboxes:
+  - title: Local weather
+    rate-ms: 10000
+    sample: curl wttr.in?0ATQF
+    border: false
+    color: 178
+  - title: Docker containers stats
+    rate-ms: 500
+    sample: docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.PIDs}}"
