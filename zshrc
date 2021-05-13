@@ -573,6 +573,8 @@ alias npmD="npm i -D"
 alias npmv="npm -v"
 
 # set show info alias
+alias find="fd"
+alias grep="ripgrep"
 alias htop="htop"
 alias gtop="gtop"
 alias glances="glances"
