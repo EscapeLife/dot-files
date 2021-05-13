@@ -573,8 +573,9 @@ alias npmD="npm i -D"
 alias npmv="npm -v"
 
 # set show info alias
+alias cat="bat"
 alias find="fd"
-alias grep="ripgrep"
+alias grep="rg"
 alias htop="htop"
 alias gtop="gtop"
 alias glances="glances"
@@ -595,6 +596,7 @@ alias sh="github"
 
 # set network alias
 alias http="http"
+alias bench="bench"
 alias ip="curl cip.cc"
 alias speedn="disproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
 alias speedw="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
