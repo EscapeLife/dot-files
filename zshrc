@@ -596,6 +596,7 @@ alias sg="google"
 alias sh="github"
 
 # set network alias
+alias mtr="mtr"
 alias http="http"
 alias bench="bench"
 alias ip="curl cip.cc"
