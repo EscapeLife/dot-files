@@ -162,8 +162,9 @@ alias disproxy="unset http_proxy https_proxy"
 
 # set pyenv home path config
 # /usr/local/lib/python3.8/site-packages
-export PYENV_ROOT="/Users/escape/.pyenv"
-export PATH="/Users/escape/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
