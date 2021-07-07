@@ -294,17 +294,18 @@ alias glo="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 
 # set git lfs alias
 alias gfs="git lfs"
+alias gfse="git lfs env"
 alias gfsi="git lfs install"
 alias gfsl="git lfs ls-files"
 alias gfsa="git lfs track"
 alias gfsd="git lfs untrack"
+alias gfsm="git lfs migrate"
 alias gfss="git lfs status"
+alias gfsu="git lfs update"
 alias gfsf="git lfs fetch"
 alias gfspl="git lfs pull"
 alias gfsps="git lfs push"
-alias gfsc="git lfs clone"
-alias gfsu="git lfs update"
-alias gfse="git lfs env"
+alias gfspsn="git push --no-verify backup master"
 
 # set git show alias
 alias glf="git ls-files"
