@@ -1,50 +1,52 @@
 [includeIf "gitdir:~/Fuckcode/"]
-    path = ~/.git/github
+path = ~/.git/github
 
 [includeIf "gitdir:~/working/"]
-    path = ~/.git/working
+path = ~/.git/working
 
 [credential]
-    helper = store
+helper = store
 
 [filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
 
 [pull]
-    rebase = true
+rebase = true
 
 [push]
-    followTags = true
+followTags = true
 
 [diff]
-    submodule = log
+submodule = log
 
 [submodule]
-    recurse = true
+recurse = true
 
 [http]
-    proxy = http://127.0.0.1:10887
+proxy = http://127.0.0.1:10887
 
 [color]
-    ui = true
+ui = true
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+oldNormal = red bold
+oldHighlight = red bold 52
+newNormal = green bold
+newHighlight = green bold 22
 
 [color "diff"]
-    meta = 11
-    frag = magenta bold
-    commit = yellow bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+meta = 11
+frag = magenta bold
+commit = yellow bold
+old = red bold
+new = green bold
+whitespace = red reverse
 
 [diff-so-fancy]
-    markEmptyLines = true
+markEmptyLines = true
 
+[core]
+quotepath = false
