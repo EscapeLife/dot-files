@@ -1,4 +1,3 @@
-
 .che__/
 *.py[cod]
 *$py.class
@@ -134,4 +133,4 @@ crashlytics-build.properties
 fabric.properties
 
 # Mac env
-.DS_Store/
+**/.DS_Store/
