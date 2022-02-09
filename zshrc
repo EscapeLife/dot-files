@@ -594,6 +594,7 @@ alias installapp="sudo xattr -r -d com.apple.quarantine"
 alias tailinstall="sudo tailscaled install-system-daemon"
 alias tailuninstall="sudo tailscaled uninstall-system-daemon"
 alias tailup="sudo tailscale up --hostname=macos"
+alias tailstatus="tailscale status"
 
 # --------------------------------
 # 16. setting escape alias
