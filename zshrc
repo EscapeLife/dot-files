@@ -157,8 +157,8 @@ export LC_NAME="en_US.UTF-8"
 export LC_ADDRESS="en_US.UTF-8"
 
 # set globl shadowsocks config
-alias runproxy="export http_proxy=http://127.0.0.1:10887;export https_proxy=http://127.0.0.1:10887;"
-alias disproxy="unset http_proxy https_proxy"
+alias runproxy="export export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias disproxy="unset http_proxy https_proxy all_proxy"
 
 # set pyenv home path config
 # /usr/local/lib/python3.8/site-packages
@@ -174,6 +174,9 @@ eval "$(pipenv --completion)"
 
 # set pipx user path
 export PATH="$PATH:/Users/escape/.local/bin"
+
+# tailscale
+export PATH="$PATH:/Users/escape/go/bin"
 
 # set pipx complete
 # autoload -U bashcompinit
@@ -586,6 +589,11 @@ alias glances="glances"
 alias mcache="sudo purge"
 alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
+
+# set tailscaled alias
+alias tailinstall="sudo tailscaled install-system-daemon"
+alias tailuninstall="sudo tailscaled uninstall-system-daemon"
+alias tailup="sudo tailscale up --hostname=macos"
 
 # --------------------------------
 # 16. setting escape alias
