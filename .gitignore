@@ -132,5 +132,8 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# VScdoe
+.vscode/
+
 # Mac env
 **/.DS_Store/
