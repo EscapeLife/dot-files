@@ -221,9 +221,9 @@ export PATH="$PATH:/Users/escape/.poetry/bin"
 # set git alias
 alias g="git"
 alias git="LANG=en_US git"
-alias gpl="git pull"
+alias gpl="git pull --all"
+alias gfe="git fetch --all"
 alias gps="git push"
-alias gfe="git fetch"
 
 # set git add alias
 alias gi="git init"
@@ -619,5 +619,6 @@ alias cmd="tldr"
 alias get="you-get"
 alias md2doc="pandoc"
 alias weather="curl wttr.in"
+alias ppt="npm init slidev@latest"
 alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
 alias virtualre="sudo '/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh' restart; sudo kextload -b org.virtualbox.kext.VBoxDrv"
