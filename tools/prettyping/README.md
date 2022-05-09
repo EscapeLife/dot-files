@@ -37,7 +37,9 @@ ping parameters handled by prettyping:
   -q  Quiet output is not allowed in prettyping.
   -R  Record route mode is not allowed in prettyping.
   -v  Verbose output seems to be the default mode in ping.
+```
 
+```bash
 # 执行命令快速测速
 $ ./prettyping www.baidu.com
 0 ▁ 10 ▂ 20 ▃ 30 ▄ 40 ▅ 50 ▆ 60 ▇ 70 █ 80 ▁ 90 ▂ 100 ▃ 110 ▄ 120 ▅ 130 ▆ 140 ▇ 150 █ 160 ▁ 170 ▂ 180 ▃ 190 ▄ 200 ▅ 210 ▆ 220 ▇ 230 █ ∞
