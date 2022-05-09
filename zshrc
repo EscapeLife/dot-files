@@ -242,7 +242,7 @@ alias grmc="git rm --cached"
 alias gam="git am"
 alias gcm="git commit -m"
 alias gcv="git commit -v"
-alias gcva="git commit -v -a"
+alias gcrc="git commit --amend"
 alias gcam="git commit -a -m"
 
 # set git diff alias
