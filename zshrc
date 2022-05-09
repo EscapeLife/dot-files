@@ -327,6 +327,15 @@ alias gstd="git stash drop"
 alias gstl="git stash list"
 alias gstc="git stash clear"
 
+# set git worktree alias
+alias gwta="git worktree add"
+alias gwtl="git worktree list"
+alias gwtr="git worktree remove"
+alias gwtm="git worktree move"
+alias gwtp="git worktree prune"
+alias gwtk="git worktree lock"
+alias gwtu="git worktree unlock"
+
 # set git submodule alias
 alias gsa="git submodule add"
 alias gsi="git submodule init"
