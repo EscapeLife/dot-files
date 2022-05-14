@@ -196,10 +196,10 @@ export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 export DISABLE_AUTO_TITLE="true"
 eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
 
-# set node12 for hkex
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@12/lib"
-export CPPFLAGS="-I/usr/local/opt/node@12/include"
+# set node18 for hexo
+export PATH="/usr/local/opt/node@18/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@18/lib"
+export CPPFLAGS="-I/usr/local/opt/node@18/include"
 
 # set thefuck config
 eval $(thefuck --alias)
