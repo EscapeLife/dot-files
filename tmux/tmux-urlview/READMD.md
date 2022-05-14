@@ -1,6 +1,6 @@
 # Tmux urlview
 
-> `https://github.com/tmux-plugins/tmux-urlview`
+> **`https://github.com/tmux-plugins/tmux-urlview`**
 
 Quickly open any url on your terminal window!
 

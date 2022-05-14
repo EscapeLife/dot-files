@@ -63,8 +63,6 @@ The amount of cells to resize can be configured with `@pane_resize` option. See
 
 Newly created pane always has the same path as the original pane.
 
-<br/><br/><br/><br/><br/>
-
 **Swapping windows**
 
 - `prefix + <` - moves current window one position to the left
