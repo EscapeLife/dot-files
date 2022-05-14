@@ -9,7 +9,7 @@
 - **杀进程时不需要输入进程号**
 - **可以横向或纵向滚动浏览进程列表**
 
-![htop](../../images/tools-htop.png)
+![htop](../images/tools-htop.png)
 
 ---
 

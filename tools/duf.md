@@ -10,7 +10,7 @@
 - **Groups & filters devices**
 - **Can conveniently output JSON**
 
-![duf](../../images/tools-duf.png)
+![duf](../images/tools-duf.png)
 
 ---
 
