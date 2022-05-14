@@ -16,7 +16,7 @@
 # 安装对应工具(Ubuntu)
 $ sudo apt install bat
 $ mkdir -p ~/.local/bin
-$ ln -s /usr/bin/bat ~/.local/bin/bat
+$ ln -s /usr/bin/batcat ~/.local/bin/batcat
 
 # 安装对应工具(macOS)
 $ brew install bat
