@@ -12,8 +12,6 @@
 
 ![duf](../images/tools-duf.png)
 
----
-
 - **安装方式**
 
 ```bash

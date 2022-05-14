@@ -10,8 +10,6 @@
 
 ![bat](../images/tools-bat.png)
 
----
-
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo apt install bat

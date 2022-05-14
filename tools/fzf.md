@@ -17,8 +17,6 @@
 
 ![fzf](../images/tools-fzf.png)
 
----
-
 ```bash
 # 安装对应工具
 $ brew install fzf # macOS

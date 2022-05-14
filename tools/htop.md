@@ -11,8 +11,6 @@
 
 ![htop](../images/tools-htop.png)
 
----
-
 ```bash
 # 安装对应工具
 $ brew install htop # macOS

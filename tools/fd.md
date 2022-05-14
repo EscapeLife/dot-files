@@ -9,9 +9,7 @@
 - **最全面的功能集**
 - **灵活的布局**
 
-![fd](../images/tools-.png)
-
----
+![fd](../images/tools-fd.png)
 
 ```bash
 # 安装对应工具
