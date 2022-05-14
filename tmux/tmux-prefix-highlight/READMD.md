@@ -1,18 +1,12 @@
 # Tmux prefix highlight
 
-> `https://github.com/tmux-plugins/tmux-prefix-highlight`
+> **`https://github.com/tmux-plugins/tmux-prefix-highlight`**
 
 Plugin that highlights when you press tmux prefix key. Inspired by
 [this](http://stackoverflow.com/questions/12003726/give-a-hint-when-press-prefix-key-in-tmux)
 thread on stackoverflow.
 
 Many thanks to [@obxhdx](https://github.com/obxhdx) for showing me this trick.
-
-Prefix off:
-![prefix_off](screenshots/prefix_off.png)
-
-Prefix on:
-![prefix_on](screenshots/prefix_on.png)
 
 ### Usage
 

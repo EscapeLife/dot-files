@@ -1,6 +1,6 @@
 # tmux-continuum
 
-> `https://github.com/tmux-plugins/tmux-continuum`
+> **`https://github.com/tmux-plugins/tmux-continuum`**
 
 Features:
 

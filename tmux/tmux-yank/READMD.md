@@ -1,6 +1,6 @@
 # tmux-yank
 
-> `https://github.com/tmux-plugins/tmux-yank`
+> **`https://github.com/tmux-plugins/tmux-yank`**
 
 Copy to the system clipboard in [`tmux`](https://tmux.github.io/).
 
@@ -258,14 +258,6 @@ set -g @shell_mode 'vi'
 ```
 
 This isn't needed with `tmux` 2.4 or newer.
-
-### Screen-cast
-
-[![screencast
-screenshot](/video/screencast_img.png)](https://vimeo.com/102039099)
-
-**Note**: The screen-cast uses <kbd>Control</kbd>–<kbd>y</kbd> for
-"put selection". Use <kbd>Y</kbd> in `v2.0.0` and later.
 
 ### Other tmux plugins
 

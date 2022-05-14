@@ -1,6 +1,6 @@
 # Tmux CPU and GPU status
 
-> `https://github.com/tmux-plugins/tmux-cpu`
+> **`https://github.com/tmux-plugins/tmux-cpu`**
 
 Enables displaying CPU and GPU information in Tmux `status-right` and `status-left`.
 Configurable percentage and icon display.
@@ -99,19 +99,10 @@ GPU equivalents also exist:
 ## Examples
 
 CPU usage lower than 30%:<br/>
-![low_fg](/screenshots/low_fg.png)
-![low_bg](/screenshots/low_bg.png)
-![low_icon](/screenshots/low_icon.png)
 
 CPU usage between 30% and 80%:<br/>
-![medium_fg](/screenshots/medium_fg.png)
-![medium_bg](/screenshots/medium_bg.png)
-![medium_icon](/screenshots/medium_icon.png)
 
 CPU usage higher than 80%:<br/>
-![high_fg](/screenshots/high_fg.png)
-![high_bg](/screenshots/high_bg.png)
-![high_icon](/screenshots/high_icon.png)
 
 ## Customization
 

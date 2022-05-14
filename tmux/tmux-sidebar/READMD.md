@@ -1,11 +1,9 @@
 # Tmux Sidebar
 
-> `https://github.com/tmux-plugins/tmux-sidebar`
+> **`https://github.com/tmux-plugins/tmux-sidebar`**
 
 `tmux-sidebar` does one thing: it opens a tree directory listing for the current
 path. It's fast, convenient and works great with vim.
-
-![screenshot](/screenshot.gif)
 
 Some of the features that make the plugin more appealing than doing the same
 thing manually each time:

@@ -1,6 +1,6 @@
 # Tmux sensible
 
-> `https://github.com/tmux-plugins/tmux-sensible`
+> **`https://github.com/tmux-plugins/tmux-sensible`**
 
 A set of tmux options that should be acceptable to everyone.
 

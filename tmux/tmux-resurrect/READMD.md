@@ -22,10 +22,6 @@ It even (optionally)
 Automatic restoring and continuous saving of tmux env is also possible with
 [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) plugin.
 
-### Screencast
-
-[![screencast screenshot](/video/screencast_img.png)](https://vimeo.com/104763018)
-
 ### Key bindings
 
 - `prefix + Ctrl-s` - save

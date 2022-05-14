@@ -1,6 +1,6 @@
 # Tmux Pain Control
 
-> `https://github.com/tmux-plugins/tmux-pain-control`
+> **`https://github.com/tmux-plugins/tmux-pain-control`**
 
 Tmux plugin for controlling panes. Adds standard pane navigation bindings.
 
@@ -15,8 +15,6 @@ Tested and working on Linux, OSX and Cygwin.
 ### Bindings
 
 Notice most of the bindings emulate vim cursor movements.
-
-<img align="right" src="/screenshots/pane_navigation.gif" alt="pane navigation"/>
 
 **Navigation**
 
@@ -36,10 +34,6 @@ active windows, `prefix + l`.
 [tmux-sensible](https://github.com/tmux-plugins/tmux-sensible) gives you
 a better binding for that, `prefix + a` (if your prefix is `C-a`).
 
-<br/><br/>
-
-<img align="right" src="/screenshots/pane_resizing.gif" alt="pane resizing"/>
-
 **Resizing panes**
 
 - `prefix + shift + h`<br/>
@@ -55,10 +49,6 @@ These mappings are `repeatable`.
 
 The amount of cells to resize can be configured with `@pane_resize` option. See
 [configuration section](#configuration) for the details.
-
-<br/><br/>
-
-<img align="right" src="/screenshots/pane_splitting.gif" alt="pane splitting"/>
 
 **Splitting panes**
 

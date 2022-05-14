@@ -1,6 +1,6 @@
 # Tmux battery status
 
-> `https://github.com/tmux-plugins/tmux-battery`
+> **`https://github.com/tmux-plugins/tmux-battery`**
 
 Enables displaying battery percentage and status icon in tmux status-right.
 
@@ -181,58 +181,40 @@ set -g status-right-length '150'
 ```
 
 Battery charging at tier 8 \[95%-100%]:<br>
-![battery-charging-tier8](./screenshots/battery_charging_tier8.png)
 
 Battery charging at tier 7 \[80%-95%):<br>
-![battery-charging-tier7](./screenshots/battery_charging_tier7.png)
 
 Battery charging at tier 6 \[65%-80%):<br>
-![battery-charging-tier6](./screenshots/battery_charging_tier6.png)
 
 Battery charging at tier 5 \[50%-65%):<br>
-![battery-charging-tier5](./screenshots/battery_charging_tier5.png)
 
 Battery charging at tier 4 \[35%-50%):<br>
-![battery-charging-tier4](./screenshots/battery_charging_tier4.png)
 
 Battery charging at tier 3 \[20%-35%):<br>
-![battery-charging-tier3](./screenshots/battery_charging_tier3.png)
 
 Battery charging at tier 2 (5%-20%):<br>
-![battery-charging-tier2](./screenshots/battery_charging_tier2.png)
 
 Battery charging at tier 1 \[0%-5%]:<br>
-![battery-charging-tier1](./screenshots/battery_charging_tier1.png)
 
 Battery discharging at tier 8 \[95%-100%]:<br>
-![battery-discharging-tier8](./screenshots/battery_discharging_tier8.png)
 
 Battery discharging at tier 7 \[80%-95%):<br>
-![battery-discharging-tier7](./screenshots/battery_discharging_tier7.png)
 
 Battery discharging at tier 6 \[65%-80%):<br>
-![battery-discharging-tier6](./screenshots/battery_discharging_tier6.png)
 
 Battery discharging at tier 5 \[50%-65%):<br>
-![battery-discharging-tier5](./screenshots/battery_discharging_tier5.png)
 
 Battery discharging at tier 4 \[35%-50%):<br>
-![battery-discharging-tier4](./screenshots/battery_discharging_tier4.png)
 
 Battery discharging at tier 3 \[20%-35%):<br>
-![battery-discharging-tier3](./screenshots/battery_discharging_tier3.png)
 
 Battery discharging at tier 2 (5%-20%):<br>
-![battery-discharging-tier2](./screenshots/battery_discharging_tier2.png)
 
 Battery discharging at tier 1 \[0%-5%]:<br>
-![battery-discharging-tier1](./screenshots/battery_discharging_tier1.png)
 
 Battery in 'attached' status:<br>
-![battery-status-attached](./screenshots/battery_status_attached.png)
 
 Battery in an unknown status:<br>
-![battery-status-unknown](./screenshots/battery_status_unknown.png)
 
 ### Tmux Plugins
 
