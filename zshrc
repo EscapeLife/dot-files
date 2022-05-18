@@ -450,7 +450,46 @@ alias dockerst="sudo k3s crictl stats"
 alias dockerka="sudo k3s crictl ps -a -q | xargs sudo k3s crictl rm -f"
 
 # set kubectl alias
-alias k="kubectl"
+alias k="sudo kubectl"
+
+# set kubectl create alias
+alias kaf="sudo kubectl apply -f"
+alias kcf="sudo kubectl create -f"
+
+# set kubectl get alias
+alias kg="sudo kubectl get"
+alias kga="sudo kubectl get addon -A"
+alias kgs="sudo kubectl get secret"
+alias kgv="sudo kubectl get storageclass"
+alias kgn="sudo kubectl get nodes"
+alias kgd="sudo kubectl get deployment"
+alias kgns="sudo kubectl get ns"
+alias kgpv="sudo kubectl get pv"
+alias kgpvc="sudo kubectl get pvc"
+alias kgp="sudo kubectl get pods -A"
+alias kgpw="sudo kubectl get pods -o wide"
+
+# set kubectl delete alias
+alias kd="sudo kubectl delete"
+alias kdf="sudo kubectl delete -f"
+alias kdn="sudo kubectl delete ns"
+alias kdp="sudo kubectl delete pods"
+alias kds="sudo kubectl delete service"
+alias kdd="sudo kubectl delete deployment"
+alias kds="sudo kubectl delete secret"
+
+# set kubectl explain alias
+alias ke="sudo kubectl explain"
+alias kep="sudo kubectl explain pods"
+alias kesvc="sudo kubectl explain svc"
+alias kens="sudo kubectl explain ns"
+
+# set kubectl other alias
+alias kv="sudo kubectl edit"
+alias kex="sudo kubectl exec"
+alias kl="sudo kubectl logs"
+alias klf="sudo kubectl logs -f"
+alias kcv="sudo kubectl config view"
 
 # set tools alias
 alias lzd="lazydocker"
