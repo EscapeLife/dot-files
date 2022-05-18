@@ -444,9 +444,10 @@ alias yps="yadm push"
 # --------------------------------
 
 # set docker alias
-alias dps="docker ps -a"
-alias dst="docker stats"
-alias dka="docker ps -a -q | xargs docker rm -f"
+alias docker="sudo k3s crictl"
+alias dockerps="sudo k3s crictl ps -a"
+alias dockerst="sudo k3s crictl stats"
+alias dockerka="sudo k3s crictl ps -a -q | xargs sudo k3s crictl rm -f"
 
 # set kubectl alias
 alias k="kubectl"
