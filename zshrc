@@ -277,6 +277,9 @@ alias gres="git restore --staged"
 
 # set git merge alias
 alias gm="git merge"
+alias gmpf="git config pull.rebase false"
+alias gmpt="git config pull.rebase true"
+alias gmpo="git config pull.ff only"
 alias gmnf="git merge --no-ff"
 alias gre="git rebase"
 alias grei="git rebase -i"
