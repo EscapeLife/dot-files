@@ -15,7 +15,7 @@
 | `CTRL-R` | 命令行历史记录搜索, 并打印输出 |
 | `ALT-C`  | 模糊搜索目录, 并进入(`cd`)     |
 
-![fzf](../images/tools-fzf.png)
+![fzf](../images/tools/tools-fzf.png)
 
 ```bash
 # 安装对应工具

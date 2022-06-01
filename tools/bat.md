@@ -8,7 +8,7 @@
 - **自动分页**
 - **智能输出(支持管道符)**
 
-![bat](../images/tools-bat.png)
+![bat](../images/tools/tools-bat.png)
 
 ```bash
 # 安装对应工具(Ubuntu)
