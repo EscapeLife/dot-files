@@ -223,7 +223,7 @@ alias g="git"
 alias git="LANG=en_US git"
 alias gpl="git pull --all"
 alias gfe="git fetch --all"
-alias gps="git push"
+alias gps="git pull -r; git push"
 
 # set git add alias
 alias gi="git init"
