@@ -1,5 +1,10 @@
+# --------------------------------
+# 1. oh-my-zsh default settings
+# --------------------------------
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/escape/.oh-my-zsh"
@@ -126,13 +131,20 @@ source $ZSH/oh-my-zsh.sh
 # 2. beautiful oh-my-zsh config
 # --------------------------------
 
-# set autojump config
+# set terminal env
+export LANG="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_NAME="en_US.UTF-8"
+export LC_ADDRESS="en_US.UTF-8"
+
+# set autojump completions
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-# set autoenv config
-# source $(brew --prefix autoenv)/activate.sh
+# set autoenv completions
+source $(brew --prefix autoenv)/activate.sh
 
-# set nvm config
+# set nvm completions
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -142,25 +154,17 @@ source $ZSH/oh-my-zsh.sh
 # fpath=(~/.zsh/completion $fpath)
 
 # set k8s autocompletion
-# source <(kubectl completion zsh)
-# complete -F __start_kubectl k
+source <(kubectl completion zsh)
+complete -F __start_kubectl k
+
+# set k3s/k3d completion
+source <(k3d completion zsh)
 
 # set vagrant completions
-fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
-compinit
+# fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
+# compinit
 
-# set terminal env
-export LANG="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
-export LC_NAME="en_US.UTF-8"
-export LC_ADDRESS="en_US.UTF-8"
-
-# set globl shadowsocks config
-alias runproxy="export export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
-alias disproxy="unset http_proxy https_proxy all_proxy"
-
-# set pyenv home path config
+# set pyenv home path completions
 # /usr/local/lib/python3.8/site-packages
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -172,16 +176,30 @@ eval "$(pyenv virtualenv-init -)"
 export PIPENV_PYPI_MIRROR=https://mirrors.aliyun.com/pypi/simple/
 eval "$(pipenv --completion)"
 
-# set pipx user path
-export PATH="$PATH:/Users/escape/.local/bin"
-
-# tailscale
-export PATH="$PATH:/Users/escape/go/bin"
-
 # set pipx complete
-# autoload -U bashcompinit
-# bashcompinit
-# eval "$(register-python-argcomplete pipx)"
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
+
+# set tmuxp completions
+export DISABLE_AUTO_TITLE="true"
+eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
+
+# set procs completion
+source <(procs --completion-out bash)
+
+# set z completion
+eval "$(zoxide init zsh)"
+
+# set thefuck completions
+eval $(thefuck --alias)
+
+# set gh completions
+# eval "$(gh completion -s zsh)"
+
+# --------------------------------
+# 3. set open tools path
+# --------------------------------
 
 # set pyenv openssl lib path
 # CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
@@ -189,33 +207,138 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
-# set spacevim config
-export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
-
-# set tmuxp config
-export DISABLE_AUTO_TITLE="true"
-eval "$(_TMUXP_COMPLETE=source_zsh tmuxp)"
-
-# set node18 for hexo
+# set node18 path for hexo(node@18)
 export PATH="/usr/local/opt/node@18/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/node@18/lib"
 export CPPFLAGS="-I/usr/local/opt/node@18/include"
 
-# set thefuck config
-eval $(thefuck --alias)
+# set spacevim path
+export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
 
-# set gh config
-eval "$(gh completion -s zsh)"
+# set pipx user path
+export PATH="$PATH:/Users/escape/.local/bin"
 
-# --------------------------------
-# 3. open install tools
-# --------------------------------
-
+# set code path
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+# set poetry path
 export PATH="$PATH:/Users/escape/.poetry/bin"
 
+# tailscale
+export PATH="$PATH:/Users/escape/go/bin"
+
+# iterm
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # --------------------------------
-# 5. setting git alias
+# 4. setting server alias
+# --------------------------------
+
+# set escape pc alias
+# alias myhome="ssh -p 22 escape@xxx.xxx.xxx.xxx.xxx"
+# alias mywork="ssh -p 22 escape@xxx.xxx.xxx.xxx.xxx"
+
+# set xpanes server
+alias centos="xpanes -c 'echo {}; {}' c1 c2 c3 c4"
+alias ubuntu="xpanes -c 'echo {}; {}' c5 c6 c7 c8"
+
+# --------------------------------
+# 5. setting system alias
+# --------------------------------
+
+# set vim alias
+alias vi="nvim"
+alias vim="nvim"
+
+# set his alias
+alias h="history"
+alias his="history | fzf"
+alias hgp="history | grep"
+alias hgpi="history | grep -i"
+
+# set shell alias
+alias ..="z .."
+alias ...="z ../.."
+alias ....="z ../../.."
+alias cd..="z .."
+alias cd...="z ../.."
+alias cd....="z ../../.."
+alias ls="exa"
+alias lr="ls -tRFh"
+alias lt="ls -ltFh"
+alias rm="rmtrash"
+alias watch="watch -n 3 -c"
+
+# --------------------------------
+# 6. setting escape alias
+# --------------------------------
+
+# set config alias
+alias config="vim ~/.zshrc"
+alias reload="source ~/.zshrc"
+
+# set globl ss config
+alias runproxy="export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
+alias disproxy="unset http_proxy https_proxy all_proxy"
+
+# set network alias
+alias mtr="mtr"
+alias curl="httpie"
+alias bench="bench"
+alias ip="\curl cip.cc"
+alias speedn="disproxy; ~/speedtest-cn-cli"
+alias speedw="runproxy; ~/speedtest-cn-cli"
+alias sshopen="sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist"
+alias sshclose="sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist"
+alias sshstatus="sudo launchctl list | grep sshd"
+
+# set tools alias
+alias mac="m"
+alias cmd="tldr"
+alias get="you-get"
+alias app="nativefier"
+alias md2doc="pandoc"
+alias weather="\curl wttr.in"
+alias weather2="\curl v2.wttr.in/beijing"
+alias ppt="npm init slidev@latest"
+alias wtf="runproxy; ~/Fuckcode/Github/DotFiles/tools/wtf/wtf"
+alias virtualre="sudo '/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh' restart; sudo kextload -b org.virtualbox.kext.VBoxDrv"
+
+# set show info alias
+alias du="duf"
+alias cat="bat"
+alias find="fd"
+alias grep="rg"
+alias htop="htop"
+alias ctop="ctop"
+alias gtop="gtop"
+alias glances="glances"
+alias timeit="hyperfine"
+alias ping="~/Tools/prettyping"
+alias lzd="lazydocker"
+alias zd="autoload -U compinit && compinit"
+
+# set cache alias
+alias mcache="sudo purge"
+alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
+alias installapp="sudo xattr -r -d com.apple.quarantine"
+
+# set tailscaled alias
+alias tailinstall="sudo tailscaled install-system-daemon"
+alias tailuninstall="sudo tailscaled uninstall-system-daemon"
+alias tailus="tailscale status"
+alias tailcp="tailscale file cp"
+alias tailnet="tailscale netcheck"
+alias taillogin="sudo tailscale up --login-server https://xxx --operator=$(whoami)"
+alias tailup="tailscale up --hostname=macos --login-server https://xxx"
+
+# set search alias
+alias sb="bing"
+alias sg="google"
+alias sh="github"
+
+# --------------------------------
+# 7. setting git alias
 # --------------------------------
 
 # set git alias
@@ -228,6 +351,7 @@ alias gps="git pull -r; git push"
 # set git add alias
 alias gi="git init"
 alias gc="GIT_LFS_SKIP_SMUDGE=1 git clone"
+alias gc1="GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1"
 alias gcs="GIT_LFS_SKIP_SMUDGE=1 git clone --recursive"
 alias gs="git status"
 alias gss="git status -s"
@@ -365,82 +489,11 @@ alias grua="git remote add upstream"
 alias gcmm="git cz"
 alias gcl="git config --list"
 alias gpushw="gaa; gcm 'One Fine Day'; gps"
+alias gname="git config user.name 'xxx'"
+alias gemail="git config user.email 'xxx@qq.com'"
 
 # --------------------------------
-# 6. setting pip alias
-# --------------------------------
-
-# set pip alias
-alias p="pip"
-alias pi="pip install"
-alias piu="pip install --user"
-alias pu="pip uninstall"
-alias pl="pip list --format=columns"
-alias pp="pip install --upgrade pip"
-
-# set pip3 alias
-alias p3="pip3"
-alias p3i="pip3 install"
-alias p3iu="pip3 install --user"
-alias p3u="pip3 uninstall"
-alias p3l="pip3 list --format=columns"
-alias p3p="pip3 install --upgrade pip"
-
-# --------------------------------
-# 7. setting pyenv alias
-# --------------------------------
-
-alias py="pyenv"
-alias pyi="pyenv install"
-alias pyu="pyenv uninstall"
-alias pyl="pyenv local"
-alias pys="pyenv versions"
-alias pyv="pyenv virtualenv"
-alias pym="pyenv migrate"
-alias pyup="pyenv update"
-alias pyinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
-
-# --------------------------------
-# 8. setting tmux alias
-# --------------------------------
-
-# set tmux alias
-alias t="tmux"
-alias tml="tmux ls"
-alias tms="tmux new -s"
-alias tma="tmux a -t"
-alias tmk="tmux kill-session -t"
-alias tmka="tmux kill-server"
-
-# set tmuxp alias
-alias tpa="tmuxp load aws"
-alias tpt="tmuxp load test"
-
-# --------------------------------
-# 9. setting hexo alias
-# --------------------------------
-
-alias hi="hexo init"
-alias hn="hexo new"
-alias hc="hexo clean"
-alias hd="hexo g -d"
-alias hs="hexo server"
-alias hcs="hexo clean && hexo server"
-
-# --------------------------------
-# 10. setting yadm alias
-# --------------------------------
-
-alias y="yadm"
-alias yi="yadm init"
-alias ys="yadm status"
-alias ya="yadm add"
-alias ycm="yadm commit -m"
-alias ypl="yadm pull"
-alias yps="yadm push"
-
-# --------------------------------
-# 11. setting docker alias
+# 8. setting docker alias
 # --------------------------------
 
 # set docker alias
@@ -491,14 +544,8 @@ alias kl="sudo kubectl logs"
 alias klf="sudo kubectl logs -f"
 alias kcv="sudo kubectl config view"
 
-# set tools alias
-alias lzd="lazydocker"
-alias zd="autoload -U compinit && compinit"
-
-# --------------------------------
-# 12. set docker-compose alias
-# --------------------------------
-
+# set docker-compose alias
+alias docker-compose="docker compose"
 alias dco="docker-compose"
 alias dcb="docker-compose build"
 alias dce="docker-compose exec"
@@ -518,20 +565,7 @@ alias dcstart="docker-compose start"
 alias dck="docker-compose kill"
 
 # --------------------------------
-# 13. setting database alias
-# --------------------------------
-
-# set redis cli alias
-alias rd="iredis"
-
-# set mysql cli alias
-alias my="mycli"
-
-# set postgres cli alias
-alias pg="pgcli"
-
-# --------------------------------
-# 14. setting vagrant alias
+# 9. setting vagrant alias
 # --------------------------------
 
 # set vagrant run
@@ -582,31 +616,97 @@ alias vgki="vagrant snapshot push"
 alias vgko="vagrant snapshot pop"
 
 # --------------------------------
-# 15. setting system alias
+# 10. setting tmux alias
 # --------------------------------
 
-# set vim alias
-alias vi="nvim"
-alias vim="nvim"
-alias h="history"
-alias hgp="history | grep"
-alias hgpi="history | grep -i"
-alias rm="rmtrash"
-alias watch="watch -n 3 -c"
-alias config="vim ~/.zshrc"
-alias reload="source ~/.zshrc"
+# set tmux alias
+alias t="tmux"
+alias tml="tmux ls"
+alias tms="tmux new -s"
+alias tma="tmux a -t"
+alias tmk="tmux kill-session -t"
+alias tmka="tmux kill-server"
 
-# set shell alias
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias cd..="cd .."
-alias cd...="cd ../.."
-alias cd....="cd ../../.."
-alias lr="ls -tRFh"
-alias lt="ls -ltFh"
+# set tmuxp alias
+alias tpt="tmuxp load test"
+alias tpa="tmuxp load aws"
 
-# set brew alias
+# --------------------------------
+# 11. setting pyenv alias
+# --------------------------------
+
+alias py="pyenv"
+alias pyi="pyenv install"
+alias pyu="pyenv uninstall"
+alias pyl="pyenv local"
+alias pys="pyenv versions"
+alias pyv="pyenv virtualenv"
+alias pym="pyenv migrate"
+alias pyup="pyenv update"
+alias pyinit="pip install flake8 yapf autoflake isort neovim jedi ipython requests"
+
+# --------------------------------
+# 12. setting pip alias
+# --------------------------------
+
+# set pip alias
+alias p="pip"
+alias pi="pip install"
+alias piu="pip install --user"
+alias pu="pip uninstall"
+alias pl="pip list --format=columns"
+alias pp="pip install --upgrade pip"
+
+# set pip3 alias
+alias p3="pip3"
+alias p3i="pip3 install"
+alias p3iu="pip3 install --user"
+alias p3u="pip3 uninstall"
+alias p3l="pip3 list --format=columns"
+alias p3p="pip3 install --upgrade pip"
+
+# --------------------------------
+# 13. setting database alias
+# --------------------------------
+
+# set redis cli alias
+alias rd="iredis"
+
+# set mysql cli alias
+alias my="mycli"
+
+# set postgres cli alias
+alias pg="pgcli"
+
+# --------------------------------
+# 14. setting yadm alias
+# --------------------------------
+
+alias y="yadm"
+alias yi="yadm init"
+alias ys="yadm status"
+alias ya="yadm add"
+alias ycm="yadm commit -m"
+alias ypl="yadm pull"
+alias yps="yadm push"
+
+# --------------------------------
+# 15. setting hexo alias
+# --------------------------------
+
+# npm install -g npm-check npm-upgrade
+# npm-upgrade && npm install --save
+alias hi="hexo init"
+alias hn="hexo new"
+alias hc="hexo clean"
+alias hd="hexo g -d"
+alias hs="hexo server"
+alias hcs="hexo clean && hexo server"
+
+# --------------------------------
+# 16. setting brew alias
+# --------------------------------
+
 alias b="brew"
 alias bi="brew install"
 alias bu="brew uninstall"
@@ -617,7 +717,10 @@ alias bri="brew reinstall"
 alias bif="brew info"
 alias blk="brew link"
 
-# set npm alias
+# --------------------------------
+# 17. setting npm alias
+# --------------------------------
+
 alias npmg="npm i -g"
 alias npml="npm list"
 alias npml0="npm ls --depth=0"
@@ -629,48 +732,15 @@ alias npmS="npm i -S"
 alias npmD="npm i -D"
 alias npmv="npm -v"
 
-# set show info alias
-alias cat="bat"
-alias find="fd"
-alias grep="rg"
-alias htop="htop"
-alias gtop="gtop"
-alias glances="glances"
-
-# set secre alias
-alias mcache="sudo purge"
-alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
-alias installapp="sudo xattr -r -d com.apple.quarantine"
-
-# set tailscaled alias
-alias tailinstall="sudo tailscaled install-system-daemon"
-alias tailuninstall="sudo tailscaled uninstall-system-daemon"
-alias tailup="sudo tailscale up --hostname=macos"
-alias tailstatus="tailscale status"
-
 # --------------------------------
-# 16. setting escape alias
+# 18. setting remote tools alias
 # --------------------------------
 
-# set search alias
-alias sb="bing"
-alias sg="google"
-alias sh="github"
-
-# set network alias
-alias mtr="mtr"
-alias http="http"
-alias bench="bench"
-alias ip="curl cip.cc"
-alias speedn="disproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
-alias speedw="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/speed/speedtest-cn-cli"
-
-# set tools alias
-alias mac="m"
-alias cmd="tldr"
-alias get="you-get"
-alias md2doc="pandoc"
-alias weather="curl wttr.in"
-alias ppt="npm init slidev@latest"
-alias wtf="runproxy; /Users/escape/Fuckcode/Github/DotFiles/tools/wtf/wtf"
-alias virtualre="sudo '/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh' restart; sudo kextload -b org.virtualbox.kext.VBoxDrv"
+alias todesku="sudo systemctl start todeskd.service"
+alias todeskd="sudo systemctl stop todeskd.service"
+alias todesks="sudo systemctl status todeskd.service"
+alias todeskr="sudo systemctl restart todeskd.service"
+alias anydesku="sudo systemctl start anydesk.service"
+alias anydeskd="sudo systemctl stop anydesk.service"
+alias anydesks="sudo systemctl status anydesk.service"
+alias anydeskr="sudo systemctl restart anydesk.service"
