@@ -6,6 +6,8 @@
 
 ![zoxide](../images/tools/tools-zoxide.gif)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo apt install zoxide
@@ -17,6 +19,8 @@ $ brew install zoxide
 $ eval "$(zoxide init zsh)"
 $ eval "$(zoxide init bash)"
 ```
+
+- **使用方式**
 
 ```bash
 ~ » zoxide --help
@@ -38,6 +42,8 @@ SUBCOMMANDS:
     query     Search for a directory
     remove    Remove a directory
 ```
+
+- **示例说明**
 
 ```bash
 # z 目录

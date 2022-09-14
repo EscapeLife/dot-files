@@ -16,6 +16,8 @@
 
 ![hyperfine](../images/tools/tools-hyperfine.gif)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo apt install hyperfine
@@ -27,6 +29,8 @@ $ brew install hyperfine
 $ wget https://github.com/sharkdp/hyperfine/releases/download/v1.15.0/hyperfine_1.15.0_amd64.deb
 $ sudo dpkg -i hyperfine_1.15.0_amd64.deb
 ```
+
+- **使用方式**
 
 ```bash
 ~ » exa --help
@@ -109,6 +113,8 @@ OPTIONS:
     -V, --version
             Show version information.
 ```
+
+- **示例说明**
 
 ```bash
 # 基本基准测试

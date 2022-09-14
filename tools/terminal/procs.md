@@ -6,6 +6,8 @@
 
 ![procs](../images/tools/tools-procs.png)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo snap install procs
@@ -16,6 +18,8 @@ $ brew install procs
 # 字段补全
 $ source <(procs --completion-out bash)
 ```
+
+- **使用方式**
 
 ```bash
 # procs 待过滤的关键字
@@ -61,6 +65,8 @@ OPTIONS:
     -h, --help Print help information
     -V, --version Print version information
 ```
+
+- **示例说明**
 
 ```bash
 # 通过非数字关键字搜索

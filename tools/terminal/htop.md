@@ -11,6 +11,8 @@
 
 ![htop](../images/tools/tools-htop.png)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具
 $ brew install htop # macOS
@@ -19,6 +21,8 @@ $ sudo apt-get install htop # Ubuntu
 # 添加配置别名(.zshrc)
 alias top="htop"
 ```
+
+- **使用方式**
 
 ```bash
 # 帮助信息

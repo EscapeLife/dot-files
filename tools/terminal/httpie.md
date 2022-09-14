@@ -14,6 +14,8 @@
 
 ![httpie](../images/tools/tools-httpie.gif)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo snap install httpie
@@ -31,6 +33,8 @@ $ sudo apt update
 $ sudo apt install httpie
 $ sudo apt upgrade httpie
 ```
+
+- **使用方式**
 
 ```bash
 # 获取帮助信息
@@ -59,6 +63,8 @@ Positional arguments:
           $ http :3000                    # => http://localhost:3000
           $ http :/foo                    # => http://localhost/foo
 ```
+
+- **示例说明**
 
 ```bash
 # https://httpie.io/docs/cli/examples

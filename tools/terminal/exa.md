@@ -6,6 +6,8 @@
 
 ![exa](../images/tools/tools-exa.png)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo apt install exa
@@ -13,6 +15,8 @@ $ sudo apt install exa
 # 安装对应工具(macOS)
 $ brew install exa
 ```
+
+- **使用方式**
 
 ```bash
 ~ » exa --help

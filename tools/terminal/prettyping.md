@@ -2,11 +2,17 @@
 
 > **[prettyping](https://github.com/denilsonsa/prettyping) - 使输出更漂亮、更丰富多彩、更紧凑和更容易阅读**
 
+- **工具安装**
+
 ```bash
 # 下载最新版工具
 $ curl -O https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
 $ chmod +x prettyping
+```
 
+- **使用方式**
+
+```bash
 # 获取帮助信息
 $ ./prettyping --help
 Usage: prettyping [prettyping parameters] <standard ping parameters>
@@ -38,6 +44,8 @@ ping parameters handled by prettyping:
   -R  Record route mode is not allowed in prettyping.
   -v  Verbose output seems to be the default mode in ping.
 ```
+
+- **示例说明**
 
 ```bash
 # 执行命令快速测速

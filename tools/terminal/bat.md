@@ -2,6 +2,8 @@
 
 > **[bat](https://github.com/sharkdp/bat) - 增强版 cat 工具(带有 git 集成和语法高亮)**
 
+一个 `cat` 克隆，搭配语法高亮和 `Git` 集成。
+
 - **语法高亮**
 - **Git 集成**
 - **不可打印字符可视化**
@@ -9,6 +11,8 @@
 - **智能输出(支持管道符)**
 
 ![bat](../images/tools/tools-bat.png)
+
+- **工具安装**
 
 ```bash
 # 安装对应工具(Ubuntu)
@@ -19,6 +23,8 @@ $ ln -s /usr/bin/batcat ~/.local/bin/batcat
 # 安装对应工具(macOS)
 $ brew install bat
 ```
+
+- **使用方式**
 
 ```bash
 # 获取帮助信息
@@ -58,6 +64,8 @@ OPTIONS:
     -V, --version
             Show version information.
 ```
+
+- **示例说明**
 
 ```bash
 # 在终端中查看一个文件

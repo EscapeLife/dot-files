@@ -6,6 +6,8 @@
 
 ![ripgrep](../images/tools/tools-ripgrep.png)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具(Ubuntu)
 $ sudo apt-get install ripgrep
@@ -13,6 +15,8 @@ $ sudo apt-get install ripgrep
 # 安装对应工具(macOS)
 $ brew install ripgrep
 ```
+
+- **使用方式**
 
 ```bash
 ~ » ripgrep --help
@@ -37,6 +41,8 @@ USAGE:
     rg [OPTIONS] --help
     rg [OPTIONS] --version
 ```
+
+- **示例说明**
 
 ```bash
 # 直接搜索内容

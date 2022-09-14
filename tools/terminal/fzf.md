@@ -17,6 +17,8 @@
 
 ![fzf](../images/tools/tools-fzf.png)
 
+- **工具安装**
+
 ```bash
 # 安装对应工具
 $ brew install fzf # macOS
@@ -28,6 +30,8 @@ $(brew --prefix)/opt/fzf/install
 # 添加配置别名(.zshrc)
 alias his="history | fzf"
 ```
+
+- **示例说明**
 
 ```bash
 # 打开文件搜索功能
