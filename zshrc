@@ -276,6 +276,7 @@ alias watch="watch -n 3 -c"
 # set config alias
 alias config="vim ~/.zshrc"
 alias reload="source ~/.zshrc"
+alias confrg="cat ~/.zshrc | rg"
 
 # set globl ss config
 alias runproxy="export http_proxy=http://127.0.0.1:7890 https_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"
@@ -399,6 +400,10 @@ alias grp="git reset --hard HEAD^ && git push origin master -f"
 alias grv="git revert"
 alias gres="git restore --staged"
 
+# set git clean alias
+alias gcf="git clean -f"
+alias gcd="git clean -fd"
+
 # set git merge alias
 alias gm="git merge"
 alias gmpf="git config pull.rebase false"
@@ -440,10 +445,10 @@ alias gfspsn="git push --no-verify backup master"
 # set git show alias
 alias glf="git ls-files"
 alias glfs="git ls-files -s"
-alias gcf="git cat-file"
-alias gcft="git cat-file -t"
-alias gcfp="git cat-file -p"
-alias gcfs="git cat-file -s"
+alias gcat="git cat-file"
+alias gcatt="git cat-file -t"
+alias gcatp="git cat-file -p"
+alias gcats="git cat-file -s"
 
 # set git statsh alias
 alias gst="git stash"
