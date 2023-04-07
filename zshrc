@@ -379,6 +379,7 @@ alias gdt="git diff-tree --no-commit-id --name-only -r"
 alias gdw="git diff --word-diff"
 alias gdf="git diff --name-status"
 alias gds="git diff --cached --submodule"
+alias gdn="git diff --name-only"
 alias gbl="git blame -b -w"
 alias gcount="git shortlog -sn"
 
