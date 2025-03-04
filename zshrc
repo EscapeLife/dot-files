@@ -335,8 +335,15 @@ alias tailnet="tailscale netcheck"
 alias tailweb="tailscale web"
 alias tailserve="tailscale serve"
 alias tailfunnel="tailscale funnle"
-alias taillogin="sudo tailscale up --login-server https://xxx --operator=$(whoami)"
-alias tailup="tailscale up --hostname=macos --login-server https://xxx"
+
+# set headscale alias
+# export HEADSCALE_CLI_ADDRESS=host HEADSCALE_CLI_API_KEY=keys
+alias headnode="headscale nodes"
+alias headuser="headscale users"
+alias headapi="headscale apikeys"
+alias headconf="headscale configtest"
+alias taillogin="sudo tailscale up --login-server https://host --operator=$(whoami)"
+alias tailup="tailscale up --hostname=macos --login-server https://host"
 
 # set search alias
 alias sb="bing"
