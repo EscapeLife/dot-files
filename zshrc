@@ -606,6 +606,7 @@ alias vgrdp="vagrant rdp"
 # set vagrant status
 alias vgs="vagrant status"
 alias vgsg="vagrant global-status"
+alias vgsgp="vagrant global-status --prune"
 alias vgre="vagrant resume"
 alias vgpr="vagrant provision"
 
@@ -617,7 +618,9 @@ alias vgbl="vagrant box list"
 alias vgba="vagrant box add"
 alias vgbr="vagrant box remove"
 alias vgbu="vagrant box update"
+alias vgbub="vagrant box update --box"
 alias vgbo="vagrant box outdated"
+alias vgbp="vagrant box prune"
 
 # set vagrant plugin alias
 alias vgpl="vagrant plugin list"
