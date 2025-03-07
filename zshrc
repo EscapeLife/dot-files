@@ -324,6 +324,10 @@ alias mcache="sudo purge"
 alias ucache="sync && echo 3 | sudo tee /proc/sys/vm/drop_caches"
 alias installapp="sudo xattr -r -d com.apple.quarantine"
 
+# set ui display
+alias setmu="sudo systemctl set-default multi-user.target"
+alias setui="sudo systemctl set-default graphical.target"
+
 # set tailscaled alias
 alias tailinstall="sudo tailscaled install-system-daemon"
 alias tailuninstall="sudo tailscaled uninstall-system-daemon"
