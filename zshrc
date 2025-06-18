@@ -164,6 +164,10 @@ source <(k3d completion zsh)
 # fpath=(/opt/vagrant/embedded/gems/2.2.14/gems/vagrant-2.2.14/contrib/zsh $fpath)
 # compinit
 
+# set uv/uvx completion
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
+
 # set pyenv home path completions
 # /usr/local/lib/python3.8/site-packages
 export PYENV_ROOT="$HOME/.pyenv"
