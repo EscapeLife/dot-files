@@ -14,8 +14,7 @@ export ZSH="/Users/escape/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="af-magic"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -59,7 +58,7 @@ ZSH_THEME="spaceship"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="false"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -80,6 +79,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 plugins=(
   pip
   sudo
+  direnv
   autojump
   jsontools
   web-search
@@ -128,7 +128,40 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # --------------------------------
-# 2. beautiful oh-my-zsh config
+# 2. set open tools path
+# --------------------------------
+
+# set pyenv openssl lib path
+# CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+# set node18 path for hexo(node@18)
+export PATH="/usr/local/opt/node@18/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@18/lib"
+export CPPFLAGS="-I/usr/local/opt/node@18/include"
+
+# set spacevim path
+export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
+
+# set pipx user path
+export PATH="$PATH:/Users/escape/.local/bin"
+
+# set code path
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
+# set poetry path
+export PATH="$PATH:/Users/escape/.poetry/bin"
+
+# tailscale
+export PATH="$PATH:/Users/escape/go/bin"
+
+# iterm
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# --------------------------------
+# 3. beautiful oh-my-zsh config
 # --------------------------------
 
 # set terminal env
@@ -143,6 +176,9 @@ export LC_ADDRESS="en_US.UTF-8"
 
 # set autoenv completions
 source $(brew --prefix autoenv)/activate.sh
+
+# set direnv completions
+eval "$(direnv hook zsh)"
 
 # set nvm completions
 # export NVM_DIR="$HOME/.nvm"
@@ -165,6 +201,7 @@ source <(k3d completion zsh)
 # compinit
 
 # set uv/uvx completion
+. "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
 
@@ -201,38 +238,8 @@ eval $(thefuck --alias)
 # set gh completions
 # eval "$(gh completion -s zsh)"
 
-# --------------------------------
-# 3. set open tools path
-# --------------------------------
-
-# set pyenv openssl lib path
-# CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl@1.1)" pyenv install 3.7.0
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-
-# set node18 path for hexo(node@18)
-export PATH="/usr/local/opt/node@18/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@18/lib"
-export CPPFLAGS="-I/usr/local/opt/node@18/include"
-
-# set spacevim path
-export PATH="$PATH:/Users/escape/Library/Python/2.7/bin"
-
-# set pipx user path
-export PATH="$PATH:/Users/escape/.local/bin"
-
-# set code path
-export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
-
-# set poetry path
-export PATH="$PATH:/Users/escape/.poetry/bin"
-
-# tailscale
-export PATH="$PATH:/Users/escape/go/bin"
-
-# iterm
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# set thefuck completions
+eval $(thefuck --alias)
 
 # --------------------------------
 # 4. setting server alias
