@@ -88,6 +88,7 @@ plugins=(
   zsh-completions
   history-substring-search
   colored-man-pages
+  zsh-vi-mode
   python
   poetry
   # git
